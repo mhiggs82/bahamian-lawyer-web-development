@@ -1,0 +1,111 @@
+{
+  "identity": {
+    "name": "Seymour Law",
+    "founded": 1995,
+    "tagline": "Commercial Excellence. Bahamian Legacy.",
+    "mission": "To provide world-class commercial legal services with the warmth and personalized attention of a boutique Bahamian firm.",
+    "vibe": "Modern Colonial Editorial. Trustworthy, sophisticated, warm, authoritative, non-templated."
+  },
+  "typography": {
+    "primary_font": "Playfair Display",
+    "secondary_font": "Manrope",
+    "scale": {
+      "h1": "text-5xl md:text-7xl font-serif tracking-tight leading-[1.1]",
+      "h2": "text-4xl md:text-5xl font-serif tracking-tight leading-tight",
+      "h3": "text-2xl md:text-3xl font-serif tracking-normal",
+      "body_lg": "text-lg md:text-xl font-sans leading-relaxed text-slate-600",
+      "body": "text-base font-sans leading-relaxed text-slate-600",
+      "label": "text-xs font-sans uppercase tracking-[0.2em] text-slate-500 font-semibold"
+    },
+    "imports": [
+      "@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');"
+    ]
+  },
+  "colors": {
+    "palette": {
+      "background": "#F9F8F6",
+      "foreground": "#1E293B",
+      "primary": "#0F172A",
+      "secondary": "#E2E8F0",
+      "accent": "#C6A668",
+      "muted": "#F1F5F9",
+      "border": "#E2E8F0"
+    },
+    "utility_classes": {
+      "bg-page": "bg-[#F9F8F6]",
+      "text-gold": "text-[#C6A668]",
+      "bg-navy": "bg-[#0F172A]",
+      "border-limestone": "border-[#E2E8F0]"
+    }
+  },
+  "layout_strategies": {
+    "grid_system": "Bento Grid Mode A (The Tetris Grid) for Marketing sections.",
+    "spacing": "Generous. Use py-24 or py-32 for section vertical padding. Gap-8 to Gap-16.",
+    "containers": "max-w-7xl mx-auto px-6 md:px-12",
+    "alignment": "Asymmetrical. Avoid centering text unless it's a quote. Use left align with ample negative space on the right."
+  },
+  "components": {
+    "buttons": {
+      "style": "Sharp edges or very slight rounding (rounded-sm).",
+      "primary": "bg-[#0F172A] text-white hover:bg-[#1E293B] px-8 py-4 text-sm tracking-widest uppercase transition-all duration-300",
+      "outline": "border border-[#0F172A] text-[#0F172A] hover:bg-[#0F172A] hover:text-white px-8 py-4 text-sm tracking-widest uppercase transition-all duration-300",
+      "link": "text-[#0F172A] underline decoration-[#C6A668] underline-offset-4 hover:decoration-2 transition-all"
+    },
+    "cards": {
+      "style": "Flat, no shadow. 1px border in 'stone-200' or transparent with 'hover:bg-white' transition.",
+      "content": "Minimal. Title, thin line separator, short description."
+    },
+    "navigation": {
+      "style": "Sticky. Glassmorphism with a 'frosted limestone' feel (backdrop-blur-md bg-[#F9F8F6]/80). Border-b border-stone-200/50."
+    }
+  },
+  "image_urls": {
+    "hero": {
+      "url": "https://images.unsplash.com/photo-1591303239195-df6ed4eb91c7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwzfHxjYWxtJTIwb2NlYW4lMjBob3Jpem9uJTIwYmFoYW1hcyUyMG1vb2R5fGVufDB8fHx8MTc3MjgxMzE4Nnww&ixlib=rb-4.1.0&q=85",
+      "description": "Abstract calm ocean view from a dock. Use as a subtle background or split-screen element. It represents 'Bahamian Calm' and 'Stability'.",
+      "category": "Hero Background"
+    },
+    "legacy": {
+      "url": "https://images.unsplash.com/photo-1661064343945-38b0721aae15?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwyfHxuYXNzYXUlMjBiYWhhbWFzJTIwZ292ZXJubWVudCUyMGhvdXNlJTIwY29sb25pYWwlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzcyODEzMTg1fDA&ixlib=rb-4.1.0&q=85",
+      "description": "White colonial building with tower. Represents 'Established History' and 'Government Relations'.",
+      "category": "About/History Section"
+    },
+    "texture": {
+      "url": "https://images.unsplash.com/photo-1673157014075-d97abcfe2308?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwxfHxsaW1lc3RvbmUlMjB0ZXh0dXJlJTIwYmVpZ2UlMjB3YWxsfGVufDB8fHx8MTc3MjgxMzE4N3ww&ixlib=rb-4.1.0&q=85",
+      "description": "Limestone texture. Use as a subtle overlay or section background with low opacity to add tactile feel.",
+      "category": "Background Texture"
+    },
+    "practice_areas": {
+      "url": "https://images.pexels.com/photos/261705/pexels-photo-261705.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Fountain pen on notebook. Elegant, classic legal imagery without being cheesy.",
+      "category": "Practice Areas Abstract"
+    },
+    "columns": {
+      "url": "https://images.unsplash.com/photo-1765788819823-18e729eb2ea8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwzfHxuZW9jbGFzc2ljYWwlMjBidWlsZGluZyUyMGNvbHVtbnMlMjBzdG9uZSUyMGRldGFpbHxlbnwwfHx8fDE3NzI4MTMxOTl8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Neoclassical columns detail. Represents 'Strength' and 'Foundation'.",
+      "category": "Why Choose Us / Values"
+    }
+  },
+  "motion": {
+    "instructions": "Use 'framer-motion' for all entrances. Use 'ScrollTrigger' or viewport based animation for sections.",
+    "styles": {
+      "fade_up": "initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: 'easeOut' }} viewport={{ once: true }}",
+      "parallax": "Use subtle y-axis movement on images relative to scroll speed.",
+      "stagger": "Stagger children elements by 0.1s."
+    }
+  },
+  "accessibility": {
+    "contrast_check": "Ensure gold text is only used on dark navy backgrounds. On light backgrounds, use gold for borders/icons only, not text.",
+    "semantic_html": "Use <article> for practice areas, <aside> for contact info, <nav> for menu.",
+    "aria_labels": "All icon-only buttons must have aria-label."
+  },
+  "universal_guidelines": [
+    "Do NOT use 'Inter' font. Use 'Manrope' for body.",
+    "Do NOT use gradients. Use solid colors or texture overlays.",
+    "Do NOT center text by default. Left align creates better readability and tension.",
+    "Use 2-3x more whitespace than you think is necessary.",
+    "All interactive elements must have data-testid attributes.",
+    "Override default shadcn CSS variables in index.css to match the Palette above."
+  ],
+  "instructions_to_main_agent": "1. Install 'framer-motion' and 'lucide-react'. 2. Update index.css with the new color variables. 3. Build a 'Navbar' that is sticky and glassmorphic. 4. Build a 'Hero' that uses the ocean image as a subtle side or background element, focusing on the tagline. 5. Build 'PracticeAreas' as an elegant accordion or list. 6. Build a 'Footer' that is deep navy with gold accents. 7. Use the provided image URLs strictly."
+}
