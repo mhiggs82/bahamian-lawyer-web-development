@@ -607,7 +607,28 @@ footer span { color: var(--gold); }
   flex: 1;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+  position: relative;
 }
+.demo-loading {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 1rem;
+  background: var(--cream);
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  z-index: 1;
+}
+.demo-loading.hidden { display: none; }
+.demo-spinner {
+  width: 28px; height: 28px;
+  border: 2px solid var(--border);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
 .demo-modal-body iframe {
   width: 100%; height: 100%;
   border: none; display: block;

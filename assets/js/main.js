@@ -28,13 +28,17 @@ document.querySelectorAll('.faq-q').forEach(btn => {
 const demoModal = document.getElementById('demoModal');
 const demoFrame = document.getElementById('demoFrame');
 const demoModalTitle = document.getElementById('demoModalTitle');
+const demoLoading = document.getElementById('demoLoading');
 let currentDemoUrl = '';
+
+demoFrame.addEventListener('load', () => demoLoading.classList.add('hidden'));
 
 document.querySelectorAll('.portfolio-link').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     currentDemoUrl = link.getAttribute('href');
     demoModalTitle.textContent = link.closest('.portfolio-body').querySelector('.portfolio-name').textContent;
+    demoLoading.classList.remove('hidden');
     demoFrame.src = currentDemoUrl;
     demoModal.classList.add('active');
     demoModal.setAttribute('aria-hidden', 'false');
