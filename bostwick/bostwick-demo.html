@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bostwick, Bostwick & Co - Premier Bahamian Law Firm serving Nassau and the Bahamas. Expert legal counsel in Criminal Defense, Civil Litigation, Family Law, Immigration, and more.">
+    <title>Bostwick, Bostwick & Co | Premier Bahamian Law Firm</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* Reset & Base */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        :root {
+            --brand-teal: #0F3C3B;
+            --brand-sand: #F4F1EA;
+            --brand-copper: #C8A275;
+            --brand-dark: #1C2424;
+            --brand-cream: #FDFCF8;
+            --brand-muted: #E6E0D4;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--brand-cream);
+            color: var(--brand-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 48px;
+            }
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: transparent;
+            transition: all 0.5s ease;
+        }
+        
+        .header.scrolled {
+            background: rgba(253, 252, 248, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .header nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+        }
+        
+        @media (min-width: 1024px) {
+            .header nav {
+                padding: 20px 0;
+            }
+        }
+        
+        .logo {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-main {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--brand-teal);
+            letter-spacing: -0.025em;
+        }
+        
+        .logo-sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.75rem;
+            color: var(--brand-copper);
+            letter-spacing: 0.2em;
+            margin-top: -4px;
+        }
+        
+        .nav-links {
+            display: none;
+            align-items: center;
+            gap: 32px;
+        }
+        
+        @media (min-width: 1024px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+        
+        .nav-links a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--brand-sand);
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--brand-copper);
+        }
+        
+        .header-cta {
+            display: none;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        @media (min-width: 1024px) {
+            .header-cta {
+                display: flex;
+            }
+        }
+        
+        .header-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--brand-sand);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .header-phone:hover {
+            color: var(--brand-copper);
+        }
+        
+        .btn-primary {
+            background: var(--brand-teal);
+            color: var(--brand-sand);
+            padding: 12px 24px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 2px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            background: rgba(15, 60, 59, 0.9);
+        }
+        
+        .btn-secondary {
+            border: 1px solid var(--brand-teal);
+            color: var(--brand-teal);
+            background: transparent;
+            padding: 12px 24px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 2px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--brand-teal);
+            color: var(--brand-sand);
+        }
+        
+        .btn-copper {
+            background: var(--brand-copper);
+            color: var(--brand-teal);
+            padding: 16px 32px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 2px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-copper:hover {
+            background: rgba(200, 162, 117, 0.9);
+        }
+        
+        .btn-outline-light {
+            border: 1px solid rgba(244, 241, 234, 0.3);
+            color: var(--brand-sand);
+            background: transparent;
+            padding: 16px 32px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 2px;
+            transition: all 0.3s;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-outline-light:hover {
+            background: rgba(244, 241, 234, 0.1);
+        }
+        
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            color: var(--brand-sand);
+            cursor: pointer;
+        }
+        
+        @media (min-width: 1024px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+        }
+        
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 60, 59, 0.7);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            padding-top: 128px;
+            padding-bottom: 80px;
+            max-width: 768px;
+        }
+        
+        .hero-label {
+            color: var(--brand-copper);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            margin-bottom: 24px;
+        }
+        
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--brand-sand);
+            line-height: 0.95;
+            margin-bottom: 32px;
+        }
+        
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .hero-title {
+                font-size: 5rem;
+            }
+        }
+        
+        .hero-title span {
+            color: var(--brand-copper);
+        }
+        
+        .hero-text {
+            color: rgba(244, 241, 234, 0.8);
+            font-size: 1.125rem;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+        
+        @media (min-width: 768px) {
+            .hero-text {
+                font-size: 1.25rem;
+            }
+        }
+        
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        @media (min-width: 640px) {
+            .hero-buttons {
+                flex-direction: row;
+            }
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: rgba(244, 241, 234, 0.6);
+        }
+        
+        .scroll-indicator span {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+        
+        .scroll-indicator .line {
+            width: 1px;
+            height: 48px;
+            background: rgba(244, 241, 234, 0.3);
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: var(--brand-sand);
+            padding: 64px 0;
+            border-top: 1px solid var(--brand-muted);
+            border-bottom: 1px solid var(--brand-muted);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+        
+        @media (min-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--brand-teal);
+            margin-bottom: 8px;
+        }
+        
+        @media (min-width: 768px) {
+            .stat-number {
+                font-size: 3rem;
+            }
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: rgba(15, 60, 59, 0.7);
+            letter-spacing: 0.05em;
+        }
+        
+        /* Section Padding */
+        .section {
+            padding: 80px 0;
+        }
+        
+        @media (min-width: 768px) {
+            .section {
+                padding: 112px 0;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .section {
+                padding: 128px 0;
+            }
+        }
+        
+        .section-label {
+            color: var(--brand-copper);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            margin-bottom: 16px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--brand-teal);
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+        
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 3rem;
+            }
+        }
+        
+        .section-text {
+            color: rgba(28, 36, 36, 0.7);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        
+        /* About Section */
+        .about-grid {
+            display: grid;
+            gap: 64px;
+            align-items: center;
+        }
+        
+        @media (min-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .about-image {
+            position: relative;
+        }
+        
+        .about-image img {
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            border-radius: 2px;
+            width: 100%;
+        }
+        
+        .about-badge {
+            position: absolute;
+            bottom: -32px;
+            left: -32px;
+            background: var(--brand-teal);
+            color: var(--brand-sand);
+            padding: 32px;
+            border-radius: 2px;
+            max-width: 200px;
+            display: none;
+        }
+        
+        @media (min-width: 768px) {
+            .about-badge {
+                display: block;
+            }
+        }
+        
+        .about-badge-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 8px;
+        }
+        
+        .about-badge-text {
+            font-size: 0.875rem;
+            color: rgba(244, 241, 234, 0.8);
+        }
+        
+        .link-arrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--brand-teal);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .link-arrow:hover {
+            color: var(--brand-copper);
+        }
+        
+        /* Practice Areas */
+        .bg-sand {
+            background: var(--brand-sand);
+        }
+        
+        .section-header-center {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        
+        .practice-grid {
+            display: grid;
+            gap: 24px;
+        }
+        
+        @media (min-width: 768px) {
+            .practice-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .practice-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        .practice-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(15, 60, 59, 0.1);
+            border-radius: 2px;
+            padding: 32px;
+            transition: all 0.5s;
+            height: 100%;
+        }
+        
+        .practice-card:hover {
+            border-color: rgba(200, 162, 117, 0.5);
+        }
+        
+        .practice-card svg {
+            width: 40px;
+            height: 40px;
+            color: var(--brand-copper);
+            margin-bottom: 16px;
+        }
+        
+        .practice-card h3 {
+            font-size: 1.25rem;
+            color: var(--brand-teal);
+            margin-bottom: 8px;
+            transition: color 0.3s;
+        }
+        
+        .practice-card:hover h3 {
+            color: var(--brand-copper);
+        }
+        
+        .practice-card p {
+            font-size: 0.875rem;
+            color: rgba(28, 36, 36, 0.6);
+        }
+        
+        .section-cta {
+            text-align: center;
+            margin-top: 48px;
+        }
+        
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            gap: 32px;
+        }
+        
+        @media (min-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(15, 60, 59, 0.1);
+            border-radius: 2px;
+            padding: 32px;
+            transition: all 0.5s;
+        }
+        
+        .testimonial-card:hover {
+            border-color: rgba(200, 162, 117, 0.5);
+        }
+        
+        .testimonial-stars {
+            color: var(--brand-copper);
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+        
+        .testimonial-text {
+            color: rgba(28, 36, 36, 0.7);
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        
+        .testimonial-author {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            color: var(--brand-teal);
+        }
+        
+        .testimonial-title {
+            font-size: 0.875rem;
+            color: rgba(28, 36, 36, 0.5);
+        }
+        
+        /* News Section */
+        .news-header {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+        
+        @media (min-width: 768px) {
+            .news-header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+        }
+        
+        .news-grid {
+            display: grid;
+            gap: 32px;
+        }
+        
+        @media (min-width: 768px) {
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .news-card {
+            display: block;
+        }
+        
+        .news-card-image {
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            border-radius: 2px;
+            margin-bottom: 24px;
+        }
+        
+        .news-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .news-card:hover .news-card-image img {
+            transform: scale(1.05);
+        }
+        
+        .news-card-category {
+            font-size: 0.75rem;
+            color: var(--brand-copper);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 8px;
+        }
+        
+        .news-card h3 {
+            font-size: 1.5rem;
+            color: var(--brand-teal);
+            margin-bottom: 12px;
+            transition: color 0.3s;
+        }
+        
+        .news-card:hover h3 {
+            color: var(--brand-copper);
+        }
+        
+        .news-card-excerpt {
+            font-size: 0.875rem;
+            color: rgba(28, 36, 36, 0.6);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            position: relative;
+            padding: 96px 0;
+            overflow: hidden;
+        }
+        
+        .cta-bg {
+            position: absolute;
+            inset: 0;
+        }
+        
+        .cta-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .cta-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 60, 59, 0.85);
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--brand-sand);
+            margin-bottom: 24px;
+        }
+        
+        @media (min-width: 768px) {
+            .cta-title {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .cta-title {
+                font-size: 3.5rem;
+            }
+        }
+        
+        .cta-text {
+            color: rgba(244, 241, 234, 0.8);
+            font-size: 1.125rem;
+            max-width: 640px;
+            margin: 0 auto 40px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            justify-content: center;
+        }
+        
+        @media (min-width: 640px) {
+            .cta-buttons {
+                flex-direction: row;
+            }
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--brand-teal);
+            color: var(--brand-sand);
+        }
+        
+        .footer-main {
+            padding: 80px 0;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-main {
+                padding: 112px 0;
+            }
+        }
+        
+        .footer-grid {
+            display: grid;
+            gap: 48px;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: 1.5fr 1fr 1fr 1fr;
+                gap: 32px;
+            }
+        }
+        
+        .footer-brand p {
+            color: rgba(244, 241, 234, 0.7);
+            font-size: 0.875rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: rgba(244, 241, 234, 0.8);
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-contact-item:hover {
+            color: var(--brand-copper);
+        }
+        
+        .footer-contact-item svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .footer h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            font-size: 0.875rem;
+            color: rgba(244, 241, 234, 0.7);
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--brand-copper);
+        }
+        
+        .footer-cta p {
+            font-size: 0.875rem;
+            color: rgba(244, 241, 234, 0.7);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(244, 241, 234, 0.1);
+            padding: 24px 0;
+        }
+        
+        .footer-bottom-content {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-bottom-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+        
+        .footer-bottom p {
+            font-size: 0.75rem;
+            color: rgba(244, 241, 234, 0.5);
+        }
+        
+        .footer-bottom-links {
+            display: flex;
+            gap: 24px;
+        }
+        
+        .footer-bottom-links a {
+            font-size: 0.75rem;
+            color: rgba(244, 241, 234, 0.5);
+            transition: color 0.3s;
+        }
+        
+        .footer-bottom-links a:hover {
+            color: var(--brand-copper);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <span class="logo-main">BOSTWICK</span>
+                    <span class="logo-sub">BOSTWICK & CO</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="#">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#practice-areas">Practice Areas</a>
+                    <a href="#team">Our Team</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#results">Results</a>
+                    <a href="#news">News</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                
+                <div class="header-cta">
+                    <a href="tel:242-322-2038" class="header-phone">
+                        <i data-lucide="phone" style="width:16px;height:16px"></i>
+                        <span>242-322-2038</span>
+                    </a>
+                    <a href="#contact" class="btn-primary">Free Consultation</a>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i data-lucide="menu" style="width:24px;height:24px"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1487252855124-d29de15dfe84?crop=entropy&cs=srgb&fm=jpg&q=85" alt="Bahamas ocean">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-label">Established Legal Excellence</p>
+                <h1 class="hero-title">
+                    Premier Legal<br>
+                    Counsel in<br>
+                    <span>The Bahamas</span>
+                </h1>
+                <p class="hero-text">
+                    Bostwick, Bostwick & Co provides exceptional legal representation 
+                    with a commitment to integrity, excellence, and client success.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-copper">
+                        Schedule Consultation
+                        <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+                    </a>
+                    <a href="tel:242-322-2038" class="btn-outline-light">
+                        <i data-lucide="phone" style="width:16px;height:16px"></i>
+                        242-322-2038
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="line"></div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <p class="stat-number">35+</p>
+                    <p class="stat-label">Years of Experience</p>
+                </div>
+                <div class="stat-item">
+                    <p class="stat-number">5,000+</p>
+                    <p class="stat-label">Cases Handled</p>
+                </div>
+                <div class="stat-item">
+                    <p class="stat-number">98%</p>
+                    <p class="stat-label">Client Satisfaction</p>
+                </div>
+                <div class="stat-item">
+                    <p class="stat-number">12</p>
+                    <p class="stat-label">Practice Areas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div>
+                    <p class="section-label">About Our Firm</p>
+                    <h2 class="section-title">A Legacy of Legal Excellence in Nassau</h2>
+                    <p class="section-text">
+                        For over three decades, Bostwick, Bostwick & Co has been a pillar of legal 
+                        excellence in The Bahamas. Located in the heart of Nassau on historic George 
+                        Street, our firm has built an unparalleled reputation for integrity, expertise, 
+                        and client-focused service.
+                    </p>
+                    <p class="section-text">
+                        Our team of experienced attorneys brings deep knowledge of Bahamian law across 
+                        a comprehensive range of practice areas, from criminal defense to corporate 
+                        matters, family law to immigration services.
+                    </p>
+                    <a href="#" class="link-arrow">
+                        Learn More About Us
+                        <i data-lucide="chevron-right" style="width:16px;height:16px"></i>
+                    </a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.pexels.com/photos/7841844/pexels-photo-7841844.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Law office interior">
+                    <div class="about-badge">
+                        <p class="about-badge-number">35+</p>
+                        <p class="about-badge-text">Years serving the Bahamian community</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Areas Section -->
+    <section class="section bg-sand" id="practice-areas">
+        <div class="container">
+            <div class="section-header-center">
+                <p class="section-label">Our Expertise</p>
+                <h2 class="section-title">Practice Areas</h2>
+            </div>
+            <div class="practice-grid">
+                <div class="practice-card">
+                    <i data-lucide="shield" style="width:40px;height:40px;color:#C8A275"></i>
+                    <h3>Criminal Defense</h3>
+                    <p>Vigorous defense for all criminal matters</p>
+                </div>
+                <div class="practice-card">
+                    <i data-lucide="scale" style="width:40px;height:40px;color:#C8A275"></i>
+                    <h3>Civil Damages</h3>
+                    <p>Recovering compensation for your injuries</p>
+                </div>
+                <div class="practice-card">
+                    <i data-lucide="landmark" style="width:40px;height:40px;color:#C8A275"></i>
+                    <h3>Estates</h3>
+                    <p>Protecting your legacy and loved ones</p>
+                </div>
+                <div class="practice-card">
+                    <i data-lucide="globe" style="width:40px;height:40px;color:#C8A275"></i>
+                    <h3>Immigration</h3>
+                    <p>Immigration and residency matters</p>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a href="#" class="btn-secondary">View All Practice Areas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <div class="section-header-center">
+                <p class="section-label">Client Testimonials</p>
+                <h2 class="section-title">What Our Clients Say</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "The team at Bostwick & Bostwick provided exceptional representation during our complex business litigation. Their expertise and dedication resulted in a favorable outcome that exceeded our expectations."
+                    </p>
+                    <p class="testimonial-author">James Mitchell</p>
+                    <p class="testimonial-title">Business Owner</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "During a very difficult time in my life, the attorneys here showed genuine compassion while providing outstanding legal counsel for my family matter. I cannot thank them enough."
+                    </p>
+                    <p class="testimonial-author">Maria Santos</p>
+                    <p class="testimonial-title">Nassau Resident</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Their knowledge of Bahamian banking and immigration law was invaluable in helping us establish our business presence in Nassau. Professional, efficient, and thoroughly knowledgeable."
+                    </p>
+                    <p class="testimonial-author">Robert Chen</p>
+                    <p class="testimonial-title">International Investor</p>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a href="#" class="btn-secondary">Read More Testimonials</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="section bg-sand" id="news">
+        <div class="container">
+            <div class="news-header">
+                <div>
+                    <p class="section-label">News & Insights</p>
+                    <h2 class="section-title">Latest Updates</h2>
+                </div>
+                <a href="#" class="btn-secondary">View All Articles</a>
+            </div>
+            <div class="news-grid">
+                <a href="#" class="news-card">
+                    <div class="news-card-image">
+                        <img src="https://images.unsplash.com/photo-1661064343945-38b0721aae15?crop=entropy&cs=srgb&fm=jpg&q=85&w=800" alt="Property Rights">
+                    </div>
+                    <p class="news-card-category">Real Estate</p>
+                    <h3>Understanding Bahamian Property Rights for Foreign Investors</h3>
+                    <p class="news-card-excerpt">A comprehensive guide to navigating real estate laws and regulations for international buyers in The Bahamas.</p>
+                    <span class="link-arrow">
+                        Read More
+                        <i data-lucide="chevron-right" style="width:16px;height:16px"></i>
+                    </span>
+                </a>
+                <a href="#" class="news-card">
+                    <div class="news-card-image">
+                        <img src="https://images.unsplash.com/photo-1487252855124-d29de15dfe84?crop=entropy&cs=srgb&fm=jpg&q=85&w=800" alt="Immigration Policy">
+                    </div>
+                    <p class="news-card-category">Immigration</p>
+                    <h3>Recent Changes to Bahamas Immigration Policy</h3>
+                    <p class="news-card-excerpt">Important updates to immigration procedures and requirements that affect both residents and visitors.</p>
+                    <span class="link-arrow">
+                        Read More
+                        <i data-lucide="chevron-right" style="width:16px;height:16px"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-bg">
+            <img src="https://images.pexels.com/photos/7841457/pexels-photo-7841457.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Legal consultation">
+            <div class="cta-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Discuss Your Case?</h2>
+                <p class="cta-text">
+                    Contact us today for a confidential consultation. Our experienced team 
+                    is ready to provide the expert legal guidance you deserve.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-copper">
+                        Schedule Consultation
+                        <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+                    </a>
+                    <a href="tel:242-322-2038" class="btn-outline-light">
+                        <i data-lucide="phone" style="width:16px;height:16px"></i>
+                        Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="#" class="logo" style="margin-bottom:24px;display:inline-block">
+                            <span class="logo-main" style="color:var(--brand-sand)">BOSTWICK</span>
+                            <span class="logo-sub">BOSTWICK & CO</span>
+                        </a>
+                        <p>
+                            A premier Bahamian law firm providing exceptional legal services 
+                            to individuals and businesses throughout The Bahamas and beyond.
+                        </p>
+                        <div>
+                            <a href="tel:242-322-2038" class="footer-contact-item">
+                                <i data-lucide="phone"></i>
+                                <span>242-322-2038</span>
+                            </a>
+                            <a href="/cdn-cgi/l/email-protection#e48d8a828ba4868b97888593ca8697" class="footer-contact-item">
+                                <i data-lucide="mail"></i>
+                                <span><span class="__cf_email__" data-cfemail="a1c8cfc7cee1c3ced2cdc0d68fc3d2">[email&#160;protected]</span></span>
+                            </a>
+                            <div class="footer-contact-item">
+                                <i data-lucide="map-pin"></i>
+                                <span>No. 50 George Street<br>P.O. Box N-1605<br>Nassau, Bahamas</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Practice Areas</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Criminal Defense</a></li>
+                            <li><a href="#">Civil Damages</a></li>
+                            <li><a href="#">Estates</a></li>
+                            <li><a href="#">Immigration</a></li>
+                            <li><a href="#">Child Custody</a></li>
+                            <li><a href="#">Banking</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Our Team</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="#">Case Results</a></li>
+                            <li><a href="#">News & Insights</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-cta">
+                        <h4>Schedule a Consultation</h4>
+                        <p>
+                            Contact us today for a confidential consultation about your legal needs. 
+                            Our experienced team is ready to help.
+                        </p>
+                        <a href="#" class="btn-copper" style="font-size:0.75rem;padding:12px 24px">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>© 2026 Bostwick, Bostwick & Co. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+                // Update nav link colors when scrolled
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.style.color = 'var(--brand-teal)';
+                });
+                document.querySelector('.header-phone').style.color = 'var(--brand-teal)';
+                document.querySelector('.mobile-menu-btn').style.color = 'var(--brand-teal)';
+            } else {
+                header.classList.remove('scrolled');
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.style.color = 'var(--brand-sand)';
+                });
+                document.querySelector('.header-phone').style.color = 'var(--brand-sand)';
+                document.querySelector('.mobile-menu-btn').style.color = 'var(--brand-sand)';
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d84d0571bbcc8e0',t:'MTc3MjgzNjMyMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

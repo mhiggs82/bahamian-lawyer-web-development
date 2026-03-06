@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twenty Twenty & Associates | Bahamian Law Firm</title>
+  <meta name="description" content="A modern law practice led by three dedicated women attorneys, providing compassionate legal counsel across The Bahamas.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS Reset & Base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    :root {
+      --color-primary: #0F172A;
+      --color-secondary: #F5F5F0;
+      --color-accent: #BC5D45;
+      --color-highlight: #C5A065;
+      --color-background: #F9F7F2;
+      --color-surface: #FFFFFF;
+      --color-text-main: #1A1A1A;
+      --color-text-muted: #666666;
+    }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--color-background);
+      color: var(--color-text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+    
+    /* Utility Classes */
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    @media (min-width: 768px) { .container { padding: 0 48px; } }
+    
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 20px 0;
+      transition: all 0.5s ease;
+      background: transparent;
+    }
+    .header.scrolled {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 12px 0;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--color-primary);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: var(--color-primary);
+    }
+    .logo-text span {
+      display: block;
+      font-size: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--color-text-muted);
+    }
+    .nav { display: none; }
+    @media (min-width: 1024px) {
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+      }
+    }
+    .nav a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-text-main);
+      transition: color 0.3s;
+      position: relative;
+    }
+    .nav a:hover { color: var(--color-accent); }
+    .nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--color-accent);
+      transition: width 0.3s;
+    }
+    .nav a:hover::after { width: 100%; }
+    .header-cta { display: none; }
+    @media (min-width: 1024px) {
+      .header-cta {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+    }
+    .header-phone {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-text-muted);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 9999px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .btn-primary {
+      background: var(--color-primary);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--color-accent);
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      border: 2px solid var(--color-primary);
+      color: var(--color-primary);
+      background: transparent;
+    }
+    .btn-outline:hover {
+      background: var(--color-primary);
+      color: white;
+    }
+    .btn-white {
+      background: white;
+      color: var(--color-primary);
+    }
+    .btn-white:hover {
+      background: var(--color-highlight);
+      color: white;
+    }
+    .btn-gold {
+      background: var(--color-highlight);
+      color: white;
+    }
+    .btn-gold:hover {
+      background: var(--color-accent);
+    }
+    .mobile-menu-btn {
+      display: block;
+      padding: 8px;
+      color: var(--color-primary);
+    }
+    @media (min-width: 1024px) { .mobile-menu-btn { display: none; } }
+    
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.4);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      padding: 120px 0 80px;
+    }
+    .hero-card {
+      max-width: 640px;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      padding: 32px;
+      border-radius: 4px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+    }
+    @media (min-width: 768px) {
+      .hero-card { padding: 48px; }
+    }
+    .hero-tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+    }
+    .hero-tagline::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--color-accent);
+    }
+    .hero h1 {
+      font-size: 36px;
+      color: var(--color-primary);
+      margin-bottom: 24px;
+    }
+    @media (min-width: 640px) { .hero h1 { font-size: 42px; } }
+    @media (min-width: 1024px) { .hero h1 { font-size: 54px; } }
+    .hero h1 .highlight {
+      position: relative;
+      display: inline-block;
+    }
+    .hero h1 .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      width: 100%;
+      height: 12px;
+      background: rgba(197, 160, 101, 0.3);
+      z-index: -1;
+    }
+    .hero-desc {
+      font-size: 16px;
+      color: var(--color-text-muted);
+      margin-bottom: 40px;
+      max-width: 540px;
+      line-height: 1.7;
+    }
+    @media (min-width: 768px) { .hero-desc { font-size: 18px; } }
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    @media (min-width: 640px) {
+      .hero-buttons { flex-direction: row; }
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(15, 23, 42, 0.1);
+    }
+    .hero-stat h3 {
+      font-size: 28px;
+      color: var(--color-primary);
+      margin-bottom: 4px;
+    }
+    .hero-stat p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+    }
+    
+    /* Section Styles */
+    .section {
+      padding: 96px 0;
+    }
+    @media (min-width: 768px) {
+      .section { padding: 128px 0; }
+    }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+    .section-label::before,
+    .section-label::after {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--color-accent);
+    }
+    .section-label.left::after { display: none; }
+    .section-title {
+      font-size: 32px;
+      color: var(--color-primary);
+      margin-bottom: 24px;
+    }
+    @media (min-width: 640px) { .section-title { font-size: 40px; } }
+    @media (min-width: 1024px) { .section-title { font-size: 48px; } }
+    .section-desc {
+      font-size: 16px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      max-width: 640px;
+    }
+    
+    /* About Section */
+    .about { background: white; }
+    .about-grid {
+      display: grid;
+      gap: 64px;
+      align-items: center;
+    }
+    @media (min-width: 1024px) {
+      .about-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .about-image {
+      position: relative;
+    }
+    .about-image img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .about-image::before {
+      content: '';
+      position: absolute;
+      top: -24px;
+      left: -24px;
+      width: 128px;
+      height: 128px;
+      border: 2px solid rgba(188, 93, 69, 0.3);
+      z-index: -1;
+    }
+    .about-image::after {
+      content: '';
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      width: 192px;
+      height: 192px;
+      background: rgba(197, 160, 101, 0.2);
+      z-index: -1;
+    }
+    .about-content p {
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    @media (max-width: 640px) {
+      .values-grid { grid-template-columns: 1fr; text-align: center; }
+    }
+    .value-item .icon {
+      width: 48px;
+      height: 48px;
+      background: var(--color-secondary);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      color: var(--color-accent);
+    }
+    @media (max-width: 640px) {
+      .value-item .icon { margin: 0 auto 16px; }
+    }
+    .value-item h4 {
+      font-size: 18px;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+    .value-item p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+    
+    /* Practice Areas */
+    .practice-areas { background: var(--color-background); }
+    .practice-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 64px;
+    }
+    @media (min-width: 768px) {
+      .practice-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .practice-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .practice-card {
+      background: white;
+      padding: 24px;
+      border-radius: 4px;
+      transition: all 0.4s ease;
+    }
+    .practice-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.1);
+    }
+    .practice-card .icon {
+      width: 48px;
+      height: 48px;
+      background: var(--color-secondary);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      color: var(--color-accent);
+      transition: background 0.3s;
+    }
+    .practice-card:hover .icon {
+      background: rgba(188, 93, 69, 0.1);
+    }
+    .practice-card h4 {
+      font-size: 18px;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+    .practice-card p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 16px;
+    }
+    .practice-card .link {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-accent);
+      transition: color 0.3s;
+    }
+    .practice-card .link:hover { color: var(--color-primary); }
+    
+    /* Featured Practice Card */
+    .practice-card.featured {
+      background: var(--color-primary);
+      color: white;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    @media (min-width: 768px) {
+      .practice-card.featured { grid-column: span 2; grid-row: span 2; padding: 40px; }
+    }
+    .practice-card.featured::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 256px;
+      height: 256px;
+      background: rgba(197, 160, 101, 0.1);
+      border-radius: 50%;
+    }
+    .practice-card.featured .icon {
+      background: rgba(255,255,255,0.1);
+      width: 56px;
+      height: 56px;
+      color: var(--color-highlight);
+    }
+    .practice-card.featured .badge {
+      display: inline-block;
+      background: var(--color-accent);
+      color: white;
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 16px;
+    }
+    .practice-card.featured h4 {
+      font-size: 24px;
+      color: white;
+      margin-bottom: 16px;
+    }
+    @media (min-width: 1024px) {
+      .practice-card.featured h4 { font-size: 28px; }
+    }
+    .practice-card.featured p {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 24px;
+    }
+    .practice-card.featured .services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+    .practice-card.featured .services li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+    }
+    .practice-card.featured .services li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--color-highlight);
+      border-radius: 50%;
+    }
+    
+    /* Attorneys Section */
+    .attorneys { background: white; }
+    .attorneys-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 64px;
+    }
+    .attorneys-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    @media (min-width: 768px) {
+      .attorneys-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .attorney-card {
+      cursor: pointer;
+    }
+    .attorney-card .image {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 4px;
+      margin-bottom: 24px;
+    }
+    .attorney-card .image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .attorney-card:hover .image img {
+      transform: scale(1.05);
+    }
+    .attorney-card .image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15,23,42,0.6), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .attorney-card:hover .image::after { opacity: 1; }
+    .attorney-card .overlay {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .attorney-card:hover .overlay { opacity: 1; }
+    .attorney-card .overlay span {
+      display: inline-block;
+      background: white;
+      color: var(--color-primary);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 9999px;
+    }
+    .attorney-card h3 {
+      font-size: 20px;
+      color: var(--color-primary);
+      margin-bottom: 4px;
+    }
+    .attorney-card .role {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+    .attorney-card .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .attorney-card .tags span {
+      font-size: 12px;
+      color: var(--color-text-muted);
+      background: var(--color-secondary);
+      padding: 4px 12px;
+      border-radius: 9999px;
+    }
+    
+    /* Legal Aid Section */
+    .legal-aid {
+      background: var(--color-primary);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .legal-aid::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 384px;
+      height: 384px;
+      background: var(--color-highlight);
+      opacity: 0.05;
+      border-radius: 50%;
+      filter: blur(80px);
+    }
+    .legal-aid::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 384px;
+      height: 384px;
+      background: var(--color-accent);
+      opacity: 0.05;
+      border-radius: 50%;
+      filter: blur(80px);
+    }
+    .legal-aid-grid {
+      display: grid;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+    }
+    @media (min-width: 1024px) {
+      .legal-aid-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .legal-aid .section-label {
+      color: var(--color-highlight);
+    }
+    .legal-aid .section-label::before {
+      background: var(--color-highlight);
+    }
+    .legal-aid .section-title {
+      color: white;
+    }
+    .legal-aid .section-desc {
+      color: rgba(255,255,255,0.7);
+      font-size: 18px;
+    }
+    .legal-aid-features {
+      margin: 40px 0;
+    }
+    .legal-aid-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .legal-aid-feature .icon {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-highlight);
+    }
+    .legal-aid-feature h4 {
+      font-size: 18px;
+      color: white;
+      margin-bottom: 4px;
+    }
+    .legal-aid-feature p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+    }
+    .clinic-card {
+      background: white;
+      padding: 32px;
+      border-radius: 4px;
+    }
+    @media (min-width: 768px) {
+      .clinic-card { padding: 40px; }
+    }
+    .clinic-card h3 {
+      font-size: 24px;
+      color: var(--color-primary);
+      margin-bottom: 24px;
+    }
+    .clinic-info {
+      margin-bottom: 32px;
+    }
+    .clinic-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .clinic-info-item .icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background: var(--color-secondary);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-accent);
+    }
+    .clinic-info-item .label {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 2px;
+    }
+    .clinic-info-item .value {
+      font-weight: 500;
+      color: var(--color-primary);
+    }
+    .clinic-info-item .sub {
+      font-size: 14px;
+      color: var(--color-text-muted);
+    }
+    .clinic-topics h4 {
+      font-size: 14px;
+      color: var(--color-primary);
+      margin-bottom: 12px;
+    }
+    .clinic-topics .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .clinic-topics .tags span {
+      font-size: 12px;
+      color: var(--color-text-muted);
+      background: var(--color-secondary);
+      padding: 6px 12px;
+      border-radius: 9999px;
+    }
+    
+    /* Testimonials */
+    .testimonials { background: var(--color-secondary); }
+    .testimonials-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 64px;
+    }
+    .testimonial-card {
+      max-width: 896px;
+      margin: 0 auto;
+      background: white;
+      padding: 32px;
+      border-radius: 4px;
+      box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
+      text-align: center;
+      position: relative;
+    }
+    @media (min-width: 768px) {
+      .testimonial-card { padding: 48px; }
+    }
+    .testimonial-card .quote-icon {
+      position: absolute;
+      top: -24px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 48px;
+      height: 48px;
+      background: rgba(197, 160, 101, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-highlight);
+    }
+    .testimonial-card .stars {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin-bottom: 24px;
+      color: var(--color-highlight);
+    }
+    .testimonial-card blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--color-primary);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    @media (min-width: 768px) {
+      .testimonial-card blockquote { font-size: 24px; }
+    }
+    .testimonial-card .author {
+      font-weight: 500;
+      color: var(--color-primary);
+      font-size: 18px;
+    }
+    .testimonial-card .meta {
+      font-size: 14px;
+      color: var(--color-text-muted);
+    }
+    .testimonial-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .testimonial-nav button {
+      width: 48px;
+      height: 48px;
+      border: 2px solid var(--color-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      transition: all 0.3s;
+    }
+    .testimonial-nav button:hover {
+      background: var(--color-primary);
+      color: white;
+    }
+    .testimonial-dots {
+      display: flex;
+      gap: 8px;
+    }
+    .testimonial-dots span {
+      width: 8px;
+      height: 8px;
+      background: rgba(15, 23, 42, 0.2);
+      border-radius: 9999px;
+      transition: all 0.3s;
+    }
+    .testimonial-dots span.active {
+      width: 32px;
+      background: var(--color-accent);
+    }
+    
+    /* Contact Section */
+    .contact { background: white; }
+    .contact-grid {
+      display: grid;
+      gap: 48px;
+    }
+    @media (min-width: 1024px) {
+      .contact-grid { grid-template-columns: 3fr 2fr; }
+    }
+    .contact-form {
+      display: grid;
+      gap: 24px;
+    }
+    .form-row {
+      display: grid;
+      gap: 24px;
+    }
+    @media (min-width: 640px) {
+      .form-row { grid-template-columns: 1fr 1fr; }
+    }
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--color-secondary);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-highlight);
+    }
+    .form-group textarea {
+      resize: none;
+      min-height: 120px;
+    }
+    .form-note {
+      font-size: 12px;
+      color: var(--color-text-muted);
+    }
+    .contact-info-card {
+      background: var(--color-primary);
+      color: white;
+      padding: 32px;
+      border-radius: 4px;
+      height: fit-content;
+    }
+    @media (min-width: 768px) {
+      .contact-info-card { padding: 40px; }
+    }
+    .contact-info-card h3 {
+      font-size: 24px;
+      color: white;
+      margin-bottom: 32px;
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .contact-info-item .icon {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-highlight);
+    }
+    .contact-info-item .label {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 4px;
+    }
+    .contact-info-item .value {
+      font-weight: 500;
+    }
+    .contact-info-item .value a {
+      transition: color 0.3s;
+    }
+    .contact-info-item .value a:hover {
+      color: var(--color-highlight);
+    }
+    .contact-info-item .sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+    }
+    .contact-map {
+      margin-top: 40px;
+      aspect-ratio: 16/9;
+      border-radius: 4px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.1);
+    }
+    .contact-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    /* Footer */
+    .footer {
+      background: var(--color-primary);
+      color: white;
+      padding: 64px 0 24px;
+    }
+    .footer-grid {
+      display: grid;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    @media (min-width: 768px) {
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; }
+    }
+    .footer-brand .logo {
+      margin-bottom: 24px;
+    }
+    .footer-brand .logo-icon {
+      background: white;
+      color: var(--color-primary);
+    }
+    .footer-brand .logo-text {
+      color: white;
+    }
+    .footer-brand .logo-text span {
+      color: rgba(255,255,255,0.6);
+    }
+    .footer-brand p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 16px;
+    }
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+    .footer-social a:hover {
+      background: var(--color-highlight);
+    }
+    .footer-col h4 {
+      font-size: 18px;
+      color: white;
+      margin-bottom: 24px;
+    }
+    .footer-col nav {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-col nav a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      transition: color 0.3s;
+    }
+    .footer-col nav a:hover {
+      color: var(--color-highlight);
+    }
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .footer-contact-item svg {
+      flex-shrink: 0;
+      color: var(--color-highlight);
+      margin-top: 2px;
+    }
+    .footer-contact-item p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+    }
+    .footer-contact-item a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      transition: color 0.3s;
+    }
+    .footer-contact-item a:hover {
+      color: var(--color-highlight);
+    }
+    .footer-bottom {
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    .footer-bottom p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.4);
+    }
+    .footer-bottom nav {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-bottom nav a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.4);
+      transition: color 0.3s;
+    }
+    .footer-bottom nav a:hover {
+      color: rgba(255,255,255,0.6);
+    }
+    
+    /* SVG Icons */
+    .icon svg { width: 20px; height: 20px; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="#home" class="logo">
+          <div class="logo-icon">TT</div>
+          <div class="logo-text">
+            Twenty Twenty
+            <span>& Associates</span>
+          </div>
+        </a>
+        
+        <nav class="nav">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#practice-areas">Practice Areas</a>
+          <a href="#attorneys">Our Team</a>
+          <a href="#legal-aid">Legal Aid</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        
+        <div class="header-cta">
+          <a href="tel:2426981158" class="header-phone">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (242) 698 1158
+          </a>
+          <a href="#contact" class="btn btn-primary">Request Consultation</a>
+        </div>
+        
+        <button class="mobile-menu-btn" aria-label="Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="https://images.pexels.com/photos/28443535/pexels-photo-28443535.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Bahamas tropical landscape">
+    </div>
+    <div class="container hero-content">
+      <div class="hero-card">
+        <div class="hero-tagline">Nassau, Bahamas</div>
+        <h1>Compassionate Legal Counsel for <span class="highlight">Life's</span> Important Moments</h1>
+        <p class="hero-desc">A modern law practice led by three dedicated women attorneys, providing thoughtful guidance through family matters, personal challenges, and business needs across The Bahamas.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">
+            Schedule Consultation
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#practice-areas" class="btn btn-outline">Our Services</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <h3>15+</h3>
+            <p>Years Experience</p>
+          </div>
+          <div class="hero-stat">
+            <h3>2,000+</h3>
+            <p>Cases Handled</p>
+          </div>
+          <div class="hero-stat">
+            <h3>98%</h3>
+            <p>Client Satisfaction</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=800&q=80" alt="Professional women attorneys in consultation">
+        </div>
+        <div class="about-content">
+          <span class="section-label left">About Our Firm</span>
+          <h2 class="section-title">A Modern Practice Built on Trust & Understanding</h2>
+          <p>Twenty Twenty & Associates was founded with a clear vision: to provide exceptional legal services with genuine compassion. Our practice is led by three accomplished women attorneys who bring a fresh, contemporary approach to law in The Bahamas.</p>
+          <p>We understand that legal matters often arise during life's most challenging moments. Whether you're navigating a family dispute, planning your estate, or growing your business, we approach each case with the care and precision it deserves. Our commitment to the community extends beyond our practice through regular Legal Aid Clinics.</p>
+          <div class="values-grid">
+            <div class="value-item">
+              <div class="icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <h4>Compassionate Approach</h4>
+              <p>We listen first, understanding your unique situation before offering guidance.</p>
+            </div>
+            <div class="value-item">
+              <div class="icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h4>Community Focused</h4>
+              <p>Rooted in the Bahamian community, we give back through free Legal Aid Clinics.</p>
+            </div>
+            <div class="value-item">
+              <div class="icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h4>Trusted Counsel</h4>
+              <p>Our measured, thorough approach ensures you receive the best representation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Practice Areas Section -->
+  <section class="section practice-areas" id="practice-areas">
+    <div class="container">
+      <span class="section-label left">Our Expertise</span>
+      <h2 class="section-title">Practice Areas</h2>
+      <p class="section-desc">From family matters to corporate needs, we provide comprehensive legal services tailored to individuals and businesses across The Bahamas.</p>
+      
+      <div class="practice-grid">
+        <!-- Featured: Family Law -->
+        <div class="practice-card featured">
+          <div class="icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <span class="badge">Our Primary Focus</span>
+          <h4>Family Law</h4>
+          <p>We understand that family matters are deeply personal. Our team provides compassionate guidance through divorce, custody disputes, adoption, and mediation—always prioritizing your family's wellbeing.</p>
+          <ul class="services">
+            <li>Divorce & Separation</li>
+            <li>Child Custody</li>
+            <li>Adoption</li>
+            <li>Mediation</li>
+            <li>Maintenance</li>
+          </ul>
+          <a href="#contact" class="btn btn-white">Discuss Your Case</a>
+        </div>
+        
+        <!-- Corporate -->
+        <div class="practice-card">
+          <div class="icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+          </div>
+          <h4>Corporate & Commercial</h4>
+          <p>Business formation, compliance, mergers, and ongoing commercial advisory.</p>
+          <a href="#contact" class="link">Learn More</a>
+        </div>
+        
+        <!-- Real Estate -->
+        <div class="practice-card">
+          <div class="icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h4>Real Estate</h4>
+          <p>Property transactions, conveyancing, and development across The Bahamas.</p>
+          <a href="#contact" class="link">Learn More</a>
+        </div>
+        
+        <!-- Civil Litigation -->
+        <div class="practice-card">
+          <div class="icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18"/><path d="M3 7l9-4 9 4"/><path d="M3 7v10l9 4 9-4V7"/></svg>
+          </div>
+          <h4>Civil Litigation</h4>
+          <p>Dispute resolution and court representation.</p>
+          <a href="#contact" class="link">Learn More</a>
+        </div>
+        
+        <!-- Wills & Estates -->
+        <div class="practice-card">
+          <div class="icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h4>Wills & Estates</h4>
+          <p>Estate planning and probate administration.</p>
+          <a href="#contact" class="link">Learn More</a>
+        </div>
+        
+        <!-- Employment -->
+        <div class="practice-card">
+          <div class="icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <h4>Employment</h4>
+          <p>Workplace disputes and employment contracts.</p>
+          <a href="#contact" class="link">Learn More</a>
+        </div>
+        
+        <!-- Immigration -->
+        <div class="practice-card">
+          <div class="icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+          </div>
+          <h4>Immigration</h4>
+          <p>Residency permits and citizenship applications.</p>
+          <a href="#contact" class="link">Learn More</a>
+        </div>
+        
+        <!-- Personal Injury -->
+        <div class="practice-card">
+          <div class="icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+          </div>
+          <h4>Personal Injury</h4>
+          <p>Compensation for accidents and negligence.</p>
+          <a href="#contact" class="link">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Attorneys Section -->
+  <section class="section attorneys" id="attorneys">
+    <div class="container">
+      <div class="attorneys-header">
+        <span class="section-label">Our Team</span>
+        <h2 class="section-title">Meet Our Attorneys</h2>
+        <p class="section-desc">Our practice is led by three accomplished women attorneys who combine expertise with genuine care for each client's unique situation.</p>
+      </div>
+      
+      <div class="attorneys-grid">
+        <div class="attorney-card">
+          <div class="image">
+            <img src="https://images.unsplash.com/photo-1726860770429-8e6c5e309af9?auto=format&fit=crop&w=600&q=80" alt="Lillith E.A. Smith-Mackey">
+            <div class="overlay">
+              <span>View Profile</span>
+            </div>
+          </div>
+          <h3>Lillith E.A. Smith-Mackey</h3>
+          <p class="role">Managing Partner</p>
+          <div class="tags">
+            <span>Family Law</span>
+            <span>Civil Litigation</span>
+          </div>
+        </div>
+        
+        <div class="attorney-card">
+          <div class="image">
+            <img src="https://images.unsplash.com/photo-1686628332798-757c624c4b08?auto=format&fit=crop&w=600&q=80" alt="Mikia S. Cooper">
+            <div class="overlay">
+              <span>View Profile</span>
+            </div>
+          </div>
+          <h3>Mikia S. Cooper</h3>
+          <p class="role">Senior Partner</p>
+          <div class="tags">
+            <span>Corporate Law</span>
+            <span>Real Estate</span>
+          </div>
+        </div>
+        
+        <div class="attorney-card">
+          <div class="image">
+            <img src="https://images.unsplash.com/photo-1573164574048-f968d7ee9f20?auto=format&fit=crop&w=600&q=80" alt="Nicholette C.A. Burrows">
+            <div class="overlay">
+              <span>View Profile</span>
+            </div>
+          </div>
+          <h3>Nicholette C.A. Burrows</h3>
+          <p class="role">Associate Partner</p>
+          <div class="tags">
+            <span>Immigration</span>
+            <span>Employment Law</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal Aid Section -->
+  <section class="section legal-aid" id="legal-aid">
+    <div class="container">
+      <div class="legal-aid-grid">
+        <div>
+          <span class="section-label left">Giving Back</span>
+          <h2 class="section-title">Free Legal Aid Clinics</h2>
+          <p class="section-desc">At Twenty Twenty & Associates, we believe everyone deserves access to quality legal advice. Our monthly Legal Aid Clinics provide free consultations to community members who may not otherwise have access to legal counsel.</p>
+          
+          <div class="legal-aid-features">
+            <div class="legal-aid-feature">
+              <div class="icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <div>
+                <h4>Free Consultation</h4>
+                <p>No-cost initial legal advice for qualifying individuals.</p>
+              </div>
+            </div>
+            <div class="legal-aid-feature">
+              <div class="icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <div>
+                <h4>Saturday Clinics</h4>
+                <p>Held monthly on Saturdays for your convenience.</p>
+              </div>
+            </div>
+            <div class="legal-aid-feature">
+              <div class="icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div>
+                <h4>Walk-ins Welcome</h4>
+                <p>No appointment necessary, first-come first-served.</p>
+              </div>
+            </div>
+          </div>
+          
+          <a href="#contact" class="btn btn-gold">Register for Next Clinic</a>
+        </div>
+        
+        <div class="clinic-card">
+          <h3>Upcoming Clinic</h3>
+          <div class="clinic-info">
+            <div class="clinic-info-item">
+              <div class="icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <div>
+                <p class="label">Date</p>
+                <p class="value">Saturday, February 15, 2026</p>
+              </div>
+            </div>
+            <div class="clinic-info-item">
+              <div class="icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <p class="label">Time</p>
+                <p class="value">9:00 AM - 1:00 PM</p>
+              </div>
+            </div>
+            <div class="clinic-info-item">
+              <div class="icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <p class="label">Location</p>
+                <p class="value">Jander Commercial Center</p>
+                <p class="sub">Unit No.4, Second Floor, East Shirley Street</p>
+              </div>
+            </div>
+          </div>
+          <div class="clinic-topics">
+            <h4>Topics Covered:</h4>
+            <div class="tags">
+              <span>Family Law</span>
+              <span>Wills</span>
+              <span>Tenant Rights</span>
+              <span>Employment</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section testimonials">
+    <div class="container">
+      <div class="testimonials-header">
+        <span class="section-label">Client Stories</span>
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-desc">We measure our success by the lives we've helped transform. Here's what our clients have to say about working with us.</p>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="quote-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+        </div>
+        <div class="stars">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <blockquote>"Going through my divorce was the hardest time of my life, but the team at Twenty Twenty made the process as smooth as possible. They truly listened to my concerns and fought for what was best for my children. I cannot recommend them enough."</blockquote>
+        <p class="author">Sarah M.</p>
+        <p class="meta">Family Law Client • Nassau</p>
+      </div>
+      
+      <div class="testimonial-nav">
+        <button aria-label="Previous testimonial">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="testimonial-dots">
+          <span class="active"></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <button aria-label="Next testimonial">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <span class="section-label left">Get in Touch</span>
+      <h2 class="section-title">Request a Consultation</h2>
+      <p class="section-desc">Ready to discuss your legal needs? Fill out the form below and we'll be in touch within 24 hours to schedule your consultation.</p>
+      
+      <div class="contact-grid" style="margin-top: 48px;">
+        <form class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" placeholder="your@email.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="(242) 000-0000">
+            </div>
+            <div class="form-group">
+              <label for="case-type">Case Type *</label>
+              <select id="case-type" required>
+                <option value="">Select case type</option>
+                <option value="family">Family Law</option>
+                <option value="divorce">Divorce & Separation</option>
+                <option value="custody">Child Custody</option>
+                <option value="real-estate">Real Estate</option>
+                <option value="corporate">Corporate & Commercial</option>
+                <option value="wills">Wills & Estates</option>
+                <option value="immigration">Immigration</option>
+                <option value="employment">Employment</option>
+                <option value="personal-injury">Personal Injury</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">Preferred Date</label>
+              <input type="date" id="date">
+            </div>
+            <div class="form-group">
+              <label for="time">Preferred Time</label>
+              <select id="time">
+                <option value="">Select time slot</option>
+                <option value="09:00">9:00 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="14:00">2:00 PM</option>
+                <option value="15:00">3:00 PM</option>
+                <option value="16:00">4:00 PM</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell Us About Your Case *</label>
+            <textarea id="message" placeholder="Please provide a brief description of your legal matter..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Submit Request
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+          <p class="form-note">Your information is kept strictly confidential. We will never share your details with third parties.</p>
+        </form>
+        
+        <div class="contact-info-card">
+          <h3>Contact Information</h3>
+          <div class="contact-info-item">
+            <div class="icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <p class="label">Office Address</p>
+              <p class="value">Jander Commercial Center</p>
+              <p class="sub">Unit No.4, Second Floor</p>
+              <p class="sub">East Shirley Street</p>
+              <p class="sub">P.O. Box N7609</p>
+              <p class="sub">Nassau, N.P., The Bahamas</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <p class="label">Telephone</p>
+              <p class="value"><a href="tel:2426981158">(242) 698 1158</a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <p class="label">Email</p>
+              <p class="value"><a href="/cdn-cgi/l/email-protection#97fef9f1f8d7e3e3f6fbf6e0f4fff6faf5f2e5e4b9f4f8fa"><span class="__cf_email__" data-cfemail="2f464149406f5b5b4e434e584c474e424d4a5d5c014c4042">[email&#160;protected]</span></a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <p class="label">Office Hours</p>
+              <p class="value">Monday - Friday</p>
+              <p class="sub">9:00 AM - 5:00 PM</p>
+            </div>
+          </div>
+          <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.2384968493893!2d-77.32886068498!3d25.0505639438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDAzJzAyLjAiTiA3N8KwMTknNDMuOSJX!5e0!3m2!1sen!2sus!4v1635180000000!5m2!1sen!2sus" title="Office Location" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon">TT</div>
+            <div class="logo-text">
+              Twenty Twenty
+              <span>& Associates</span>
+            </div>
+          </div>
+          <p>A modern law practice led by three dedicated women attorneys, providing compassionate legal counsel across The Bahamas.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#practice-areas">Practice Areas</a>
+            <a href="#attorneys">Our Team</a>
+            <a href="#legal-aid">Legal Aid</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Practice Areas</h4>
+          <nav>
+            <a href="#practice-areas">Family Law</a>
+            <a href="#practice-areas">Corporate & Commercial</a>
+            <a href="#practice-areas">Real Estate</a>
+            <a href="#practice-areas">Civil Litigation</a>
+            <a href="#practice-areas">Wills & Estates</a>
+            <a href="#practice-areas">Immigration</a>
+          </nav>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p>Jander Commercial Center</p>
+              <p>Unit No.4, Second Floor</p>
+              <p>East Shirley Street</p>
+              <p>Nassau, N.P., The Bahamas</p>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:2426981158">(242) 698 1158</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="/cdn-cgi/l/email-protection#1d74737b725d69697c717c6a7e757c707f786f6e337e7270"><span class="__cf_email__" data-cfemail="c0a9aea6af80b4b4a1aca1b7a3a8a1ada2a5b2b3eea3afad">[email&#160;protected]</span></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Twenty Twenty & Associates. All rights reserved.</p>
+        <nav>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+    
+    // Form submission (demo)
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your inquiry! This is a demo - in the live site, your message would be sent to Twenty Twenty & Associates.');
+    });
+  </script>
+</body>
+</html>
