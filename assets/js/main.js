@@ -8,6 +8,39 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
+// Demo modal
+const demoModal = document.getElementById('demoModal');
+const demoFrame = document.getElementById('demoFrame');
+const demoModalTitle = document.getElementById('demoModalTitle');
+let currentDemoUrl = '';
+
+document.querySelectorAll('.portfolio-link').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    currentDemoUrl = link.getAttribute('href');
+    demoModalTitle.textContent = link.closest('.portfolio-body').querySelector('.portfolio-name').textContent;
+    demoFrame.src = currentDemoUrl;
+    demoModal.classList.add('active');
+    demoModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeDemoModal() {
+  demoModal.classList.remove('active');
+  demoModal.setAttribute('aria-hidden', 'true');
+  demoFrame.src = '';
+  document.body.style.overflow = '';
+}
+
+document.getElementById('demoCancel').addEventListener('click', closeDemoModal);
+document.getElementById('demoOpen').addEventListener('click', () => {
+  window.open(currentDemoUrl, '_blank', 'noopener');
+  closeDemoModal();
+});
+demoModal.addEventListener('click', e => { if (e.target === demoModal) closeDemoModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDemoModal(); });
+
 // Scroll fade-in
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });

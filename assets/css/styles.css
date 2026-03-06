@@ -556,6 +556,89 @@ footer span { color: var(--gold); }
   transform: translateY(0);
 }
 
+/* ── DEMO MODAL ── */
+.demo-modal-overlay {
+  position: fixed; inset: 0; z-index: 500;
+  background: rgba(14,14,14,0.72);
+  backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s;
+}
+.demo-modal-overlay.active {
+  opacity: 1; pointer-events: auto;
+}
+.demo-modal {
+  width: 90vw; max-width: 1000px;
+  height: 85vh;
+  background: var(--cream);
+  display: flex; flex-direction: column;
+  border: 1px solid var(--border);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.35);
+  transform: translateY(20px);
+  transition: transform 0.25s;
+}
+.demo-modal-overlay.active .demo-modal {
+  transform: translateY(0);
+}
+.demo-modal-header {
+  padding: 1.1rem 1.75rem;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-shrink: 0;
+}
+.demo-modal-title {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+.demo-modal-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(184,147,62,0.1);
+  border: 1px solid rgba(184,147,62,0.3);
+  padding: 0.25rem 0.65rem;
+  border-radius: 2px;
+}
+.demo-modal-body {
+  flex: 1;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.demo-modal-body iframe {
+  width: 100%; height: 100%;
+  border: none; display: block;
+}
+.demo-modal-footer {
+  padding: 1rem 1.75rem;
+  border-top: 1px solid var(--border);
+  display: flex; justify-content: flex-end; gap: 0.75rem;
+  flex-shrink: 0;
+}
+.demo-btn {
+  padding: 0.75rem 1.75rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.demo-btn-cancel {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+.demo-btn-cancel:hover { border-color: var(--ink); color: var(--ink); }
+.demo-btn-open {
+  background: var(--ink);
+  color: var(--cream);
+  border: 1px solid var(--ink);
+}
+.demo-btn-open:hover { background: var(--gold); border-color: var(--gold); }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   nav { padding: 1rem 1.5rem; }
