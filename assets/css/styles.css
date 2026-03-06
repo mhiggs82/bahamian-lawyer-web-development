@@ -40,6 +40,7 @@ nav {
   text-decoration: none;
 }
 .nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-toggle { display: none; }
 .nav-links a {
   font-size: 0.8rem;
   letter-spacing: 0.1em;
@@ -642,7 +643,55 @@ footer span { color: var(--gold); }
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   nav { padding: 1rem 1.5rem; }
-  .nav-links { display: none; }
+
+  /* Mobile nav toggle button */
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 22px; height: 1.5px;
+    background: var(--ink);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  /* Mobile nav drawer */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: fixed;
+    top: 57px; left: 0; right: 0;
+    background: rgba(247,243,236,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s;
+    z-index: 99;
+  }
+  .nav-links.open {
+    max-height: 400px;
+    padding: 0.5rem 0 1rem;
+  }
+  .nav-links li { width: 100%; }
+  .nav-links a {
+    display: block;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.85rem;
+  }
+
   .hero {
     grid-template-columns: 1fr;
     padding: 7rem 1.5rem 3rem;
@@ -650,4 +699,22 @@ footer span { color: var(--gold); }
   }
   section { padding: 4rem 1.5rem; }
   footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+
+  /* Modal mobile */
+  .demo-modal {
+    width: 100vw;
+    height: 92vh;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 12px 12px 0 0;
+    align-self: flex-end;
+  }
+  .demo-modal-overlay { align-items: flex-end; }
+  .demo-modal-header { padding: 1rem 1.25rem; }
+  .demo-modal-footer {
+    padding: 0.85rem 1.25rem;
+    gap: 0.5rem;
+  }
+  .demo-btn { flex: 1; text-align: center; padding: 0.85rem 1rem; }
 }
