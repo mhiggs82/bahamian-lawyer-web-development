@@ -35,9 +35,10 @@ nav {
 .nav-name {
   font-family: var(--serif);
   font-size: 0.85rem;
+  font-weight: 700;
   line-height: 1.35;
   letter-spacing: 0.04em;
-  color: var(--gold);
+  color: #8B6A1F;
   text-decoration: none;
   font-style: italic;
 }
