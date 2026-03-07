@@ -14,13 +14,16 @@
 <!-- NAV -->
 <nav>
   <a class="nav-name" href="#">M. Aurelius Higgs</a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="navLinks">
     <li><a href="#services">Services</a></li>
     <li><a href="#work">Portfolio</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -113,38 +116,38 @@
   <div class="portfolio-grid">
     <div class="portfolio-card fade-up">
       <div class="portfolio-thumb portfolio-thumb-1">
-        <img src="assets/images/demo-clarke.jpg" alt="Clarke &amp; Associates demo site screenshot">
+        <img src="assets/images/demo-clarke.jpg" alt="Bostwick, Bostwick &amp; Co demo site screenshot">
         <span class="thumb-badge">Demo</span>
       </div>
       <div class="portfolio-body">
-        <p class="portfolio-type">Corporate &amp; Commercial Law</p>
-        <p class="portfolio-name">Clarke &amp; Associates</p>
-        <p class="portfolio-desc">A formal, authoritative design for a senior commercial attorney. Emphasises credentials, client industries, and direct consultation booking.</p>
-        <a href="#" class="portfolio-link">View live demo →</a>
+        <p class="portfolio-type">Criminal Defence &amp; Civil Litigation</p>
+        <p class="portfolio-name">Bostwick, Bostwick &amp; Co</p>
+        <p class="portfolio-desc">A formal, authoritative design for an established Nassau firm covering criminal defence, civil litigation, family law, and immigration — all presented with confidence.</p>
+        <a href="bostwick/demo.html" class="portfolio-link">View live demo →</a>
       </div>
     </div>
     <div class="portfolio-card fade-up" style="transition-delay:0.1s">
       <div class="portfolio-thumb portfolio-thumb-2">
-        <img src="assets/images/demo-rolle.jpg" alt="Simone Rolle Attorney demo site screenshot">
+        <img src="assets/images/demo-rolle.jpg" alt="Seymour Law demo site screenshot">
         <span class="thumb-badge">Demo</span>
       </div>
       <div class="portfolio-body">
-        <p class="portfolio-type">Family &amp; Probate Law</p>
-        <p class="portfolio-name">Simone Rolle, Attorney</p>
-        <p class="portfolio-desc">A warmer, approachable design for family law practice. Guides clients through sensitive matters with clarity and confidence.</p>
-        <a href="#" class="portfolio-link">View live demo →</a>
+        <p class="portfolio-type">Commercial &amp; Estate Law</p>
+        <p class="portfolio-name">Seymour Law</p>
+        <p class="portfolio-desc">A refined, professional design for a senior commercial practice. Trusted counsel in real estate, corporate, immigration, and estate law since 1995.</p>
+        <a href="seymour/demo.html" class="portfolio-link">View live demo →</a>
       </div>
     </div>
     <div class="portfolio-card fade-up" style="transition-delay:0.2s">
       <div class="portfolio-thumb portfolio-thumb-3">
-        <img src="assets/images/demo-ferguson.jpeg" alt="T. Ferguson Law demo site screenshot">
+        <img src="assets/images/demo-ferguson.jpeg" alt="Twenty Twenty &amp; Associates demo site screenshot">
         <span class="thumb-badge">Demo</span>
       </div>
       <div class="portfolio-body">
-        <p class="portfolio-type">Criminal Defence</p>
-        <p class="portfolio-name">T. Ferguson Law</p>
-        <p class="portfolio-desc">Bold and direct for a criminal defence practice. Builds immediate trust and provides a clear, confidential first-contact path.</p>
-        <a href="#" class="portfolio-link">View live demo →</a>
+        <p class="portfolio-type">General Practice</p>
+        <p class="portfolio-name">Twenty Twenty &amp; Associates</p>
+        <p class="portfolio-desc">A modern, approachable design for a women-led general practice. Warm but authoritative — built to make clients feel heard and supported from the first visit.</p>
+        <a href="twentytwenty/demo.html" class="portfolio-link">View live demo →</a>
       </div>
     </div>
   </div>
@@ -279,6 +282,27 @@
   <span>M. Aurelius Higgs</span>
   <p>Powered by Love from the Sun, Sand, and Sea 🇧🇸</p>
 </footer>
+
+<!-- DEMO MODAL -->
+<div class="demo-modal-overlay" id="demoModal" aria-hidden="true">
+  <div class="demo-modal" role="dialog" aria-modal="true" aria-labelledby="demoModalTitle">
+    <div class="demo-modal-header">
+      <p class="demo-modal-title" id="demoModalTitle"></p>
+      <span class="demo-modal-label">Preview</span>
+    </div>
+    <div class="demo-modal-body">
+      <div class="demo-loading" id="demoLoading">
+        <span class="demo-spinner"></span>
+        <p>Loading…</p>
+      </div>
+      <iframe id="demoFrame" src="" title="Demo site preview" sandbox="allow-scripts allow-same-origin"></iframe>
+    </div>
+    <div class="demo-modal-footer">
+      <button class="demo-btn demo-btn-cancel" id="demoCancel">Cancel</button>
+      <button class="demo-btn demo-btn-open" id="demoOpen">Open Demo</button>
+    </div>
+  </div>
+</div>
 
 <script src="assets/js/main.js"></script>
 </body>
