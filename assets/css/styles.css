@@ -34,10 +34,11 @@ nav {
 }
 .nav-name {
   font-family: var(--serif);
-  font-size: 1.1rem;
-  letter-spacing: 0.02em;
-  color: var(--ink);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: var(--gold);
   text-decoration: none;
+  font-style: italic;
 }
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-toggle { display: none; }
