@@ -120,16 +120,16 @@ h1 em {
 .hero-cta {
   display: inline-flex; align-items: center; gap: 0.75rem;
   background: var(--gold);
-  color: var(--ink);
+  color: #fff;
   padding: 0.9rem 2rem;
   font-family: var(--sans);
   font-size: 0.85rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: background 0.2s, transform 0.2s;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
 }
-.hero-cta:hover { background: var(--cream); transform: translateY(-1px); }
+.hero-cta:hover { background: var(--cream); color: var(--gold); transform: translateY(-1px); }
 .hero-cta .arrow { font-size: 1rem; }
 .hero-cta-group { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
 .hero-cta-secondary {
