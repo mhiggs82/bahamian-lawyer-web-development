@@ -429,7 +429,14 @@ h2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  max-width: 800px;
+  max-width: 1060px;
+}
+@media (min-width: 900px) {
+  .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+  .pricing-card.featured {
+    transform: translateY(-0.75rem);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  }
 }
 .pricing-card {
   border: 1px solid var(--border);
@@ -511,6 +518,40 @@ h2 {
   border: 1px solid var(--gold);
 }
 .pricing-btn-filled:hover { background: var(--gold-light); }
+.pricing-badge-muted { background: var(--muted); }
+.pricing-year-note {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 0.2rem;
+}
+.pricing-renewal {
+  font-size: 0.8rem;
+  color: rgba(247,243,236,0.5);
+  margin-bottom: 0.75rem;
+}
+.pricing-comparison {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: rgba(247,243,236,0.4);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+.pricing-features li.struck {
+  text-decoration: line-through;
+  opacity: 0.35;
+}
+.pricing-features li.struck::before {
+  content: '✗';
+  color: var(--muted);
+}
+.pricing-scarcity {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
 
 /* ── FAQ ── */
 .faq-grid { max-width: 720px; }
