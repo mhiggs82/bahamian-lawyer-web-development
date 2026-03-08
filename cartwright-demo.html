@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simone V. Cartwright | Financial &amp; Regulatory Law | Nassau, Bahamas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ── Reset ────────────────────────────────────── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --bg:#FAFAF7;
+  --bg-alt:#F3F1EC;
+  --bg-card:#FFFFFF;
+  --border:#E2DFD8;
+  --border-light:#EDEBE6;
+  --sage-700:#3D5A4A;
+  --sage-600:#4A6B58;
+  --sage-500:#5B7B6A;
+  --sage-400:#7A9B8A;
+  --sage-300:#A3BDB0;
+  --sage-200:#C8DAD0;
+  --sage-100:#E4EDE8;
+  --bronze-600:#7A6242;
+  --bronze-500:#8B7355;
+  --bronze-400:#A68E6E;
+  --bronze-300:#C4B092;
+  --charcoal:#2C2C2C;
+  --text:#3D3D3D;
+  --text-muted:#6B6B6B;
+  --text-light:#9A9A9A;
+  --white:#FFFFFF;
+  --forest:#2C3630;
+  --forest-light:#354840;
+
+  --font-serif:'Libre Baskerville',Georgia,serif;
+  --font-sans:'Outfit','Helvetica Neue',sans-serif;
+  --max-w:1160px;
+  --section-py:110px;
+  --radius:4px;
+  --radius-lg:8px;
+  --ease:cubic-bezier(0.4,0,0.2,1);
+}
+
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{
+  font-family:var(--font-sans);
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.65;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+
+/* ── Grain overlay ────────────────────────────── */
+body::before{
+  content:'';
+  position:fixed;inset:0;z-index:9999;
+  pointer-events:none;
+  opacity:0.028;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:128px 128px;
+}
+
+/* ── Utility ──────────────────────────────────── */
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 28px}
+.label{
+  font-family:var(--font-sans);
+  font-size:0.7rem;font-weight:600;
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--sage-500);
+  margin-bottom:14px;
+}
+.heading{
+  font-family:var(--font-serif);
+  font-size:clamp(1.9rem,3.8vw,2.6rem);
+  font-weight:400;
+  line-height:1.22;
+  color:var(--charcoal);
+}
+.heading em{font-style:italic;color:var(--sage-600)}
+.heading--light{color:var(--bg)}
+.heading--light em{color:var(--sage-300)}
+.divider{
+  width:48px;height:1.5px;
+  background:var(--sage-500);
+  margin:20px 0 24px;
+}
+
+/* Animations */
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.reveal{opacity:0}.reveal.on{animation:rise .65s var(--ease) forwards}
+.reveal.d1.on{animation-delay:.1s}.reveal.d2.on{animation-delay:.2s}
+.reveal.d3.on{animation-delay:.3s}.reveal.d4.on{animation-delay:.4s}
+.reveal.d5.on{animation-delay:.5s}.reveal.d6.on{animation-delay:.6s}
+
+/* ── Navigation ───────────────────────────────── */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(250,250,247,0.92);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border-light);
+  transition:box-shadow .3s var(--ease);
+}
+.nav.scrolled{box-shadow:0 1px 12px rgba(0,0,0,0.06)}
+.nav__inner{
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:var(--max-w);margin:0 auto;padding:0 28px;
+  height:68px;
+}
+.nav__logo{display:flex;align-items:center;gap:10px}
+.nav__mark{
+  width:34px;height:34px;
+  border:1.5px solid var(--sage-500);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-serif);font-size:0.85rem;font-weight:700;
+  color:var(--sage-600);
+  transition:all .3s var(--ease);
+}
+.nav__logo:hover .nav__mark{background:var(--sage-500);color:var(--white)}
+.nav__name{
+  font-family:var(--font-serif);font-size:0.95rem;font-weight:400;
+  color:var(--charcoal);letter-spacing:-0.01em;
+}
+.nav__links{display:flex;align-items:center;gap:28px}
+.nav__links a{
+  font-size:0.82rem;font-weight:500;color:var(--text-muted);
+  transition:color .25s var(--ease);letter-spacing:0.01em;
+}
+.nav__links a:hover{color:var(--sage-600)}
+.nav__cta{
+  background:var(--sage-600);color:var(--white) !important;
+  padding:9px 20px;border-radius:var(--radius);
+  font-weight:600 !important;font-size:0.78rem !important;
+  letter-spacing:0.04em;
+  transition:all .25s var(--ease);
+}
+.nav__cta:hover{background:var(--sage-700);transform:translateY(-1px);box-shadow:0 4px 14px rgba(59,90,74,0.25)}
+
+.nav__toggle{
+  display:none;background:none;border:none;cursor:pointer;
+  width:26px;height:18px;position:relative;
+}
+.nav__toggle span{
+  display:block;width:100%;height:1.5px;background:var(--charcoal);
+  position:absolute;left:0;transition:.3s var(--ease);
+}
+.nav__toggle span:nth-child(1){top:0}
+.nav__toggle span:nth-child(2){top:8px}
+.nav__toggle span:nth-child(3){top:16px}
+.nav__toggle.on span:nth-child(1){top:8px;transform:rotate(45deg)}
+.nav__toggle.on span:nth-child(2){opacity:0}
+.nav__toggle.on span:nth-child(3){top:8px;transform:rotate(-45deg)}
+
+/* ── Hero ─────────────────────────────────────── */
+.hero{
+  padding:140px 0 80px;
+  background:var(--bg);
+  overflow:hidden;
+}
+.hero__grid{
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:60px;
+  align-items:center;
+}
+.hero__text{max-width:560px}
+.hero__badge{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-bottom:28px;
+  animation:rise .6s .2s var(--ease) both;
+}
+.hero__badge-line{width:28px;height:1.5px;background:var(--sage-500)}
+.hero__badge-txt{
+  font-size:0.7rem;font-weight:600;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--sage-500);
+}
+.hero h1{
+  font-family:var(--font-serif);
+  font-size:clamp(2.4rem,5vw,3.4rem);
+  font-weight:400;line-height:1.15;
+  color:var(--charcoal);
+  margin-bottom:24px;
+  animation:rise .65s .35s var(--ease) both;
+}
+.hero h1 em{font-style:italic;color:var(--sage-600)}
+.hero__sub{
+  font-size:1.05rem;color:var(--text-muted);
+  line-height:1.75;margin-bottom:40px;
+  max-width:480px;
+  animation:rise .65s .5s var(--ease) both;
+}
+.hero__actions{
+  display:flex;gap:14px;flex-wrap:wrap;
+  animation:rise .65s .65s var(--ease) both;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 26px;border-radius:var(--radius);
+  font-family:var(--font-sans);font-size:0.88rem;font-weight:600;
+  letter-spacing:0.01em;cursor:pointer;border:none;
+  transition:all .25s var(--ease);
+}
+.btn--sage{background:var(--sage-600);color:var(--white)}
+.btn--sage:hover{background:var(--sage-700);transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,90,74,0.2)}
+.btn--ghost{
+  background:transparent;
+  border:1.5px solid var(--border);
+  color:var(--text);
+}
+.btn--ghost:hover{border-color:var(--sage-500);color:var(--sage-600);background:var(--sage-100)}
+.btn--white{background:var(--white);color:var(--sage-700)}
+.btn--white:hover{background:var(--bg);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.1)}
+.btn--outline-light{
+  background:transparent;border:1.5px solid rgba(255,255,255,0.3);
+  color:var(--white);
+}
+.btn--outline-light:hover{border-color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.08)}
+
+/* Hero image column */
+.hero__visual{
+  position:relative;
+  animation:rise .7s .4s var(--ease) both;
+}
+.hero__img-main{
+  width:100%;aspect-ratio:3/4;
+  object-fit:cover;object-position:center 20%;
+  border-radius:var(--radius-lg);
+  box-shadow:0 20px 50px rgba(0,0,0,0.08);
+}
+.hero__img-float{
+  position:absolute;
+  bottom:-24px;left:-40px;
+  width:180px;
+  background:var(--bg-card);
+  border:1px solid var(--border-light);
+  border-radius:var(--radius-lg);
+  padding:20px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.06);
+}
+.hero__img-float-num{
+  font-family:var(--font-serif);
+  font-size:2rem;font-weight:700;
+  color:var(--sage-600);line-height:1;
+  margin-bottom:4px;
+}
+.hero__img-float-label{
+  font-size:0.72rem;font-weight:500;
+  color:var(--text-muted);
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+}
+
+/* ── Ticker / trust strip ─────────────────────── */
+.trust{
+  padding:32px 0;
+  border-top:1px solid var(--border-light);
+  border-bottom:1px solid var(--border-light);
+  background:var(--bg-alt);
+}
+.trust__inner{
+  display:flex;align-items:center;justify-content:center;
+  gap:48px;flex-wrap:wrap;
+}
+.trust__item{text-align:center}
+.trust__item-num{
+  font-family:var(--font-serif);font-size:1.6rem;font-weight:700;
+  color:var(--charcoal);line-height:1;margin-bottom:4px;
+}
+.trust__item-label{
+  font-size:0.68rem;font-weight:500;
+  color:var(--text-light);
+  text-transform:uppercase;letter-spacing:0.12em;
+}
+.trust__sep{
+  width:1px;height:36px;
+  background:var(--border);
+}
+
+/* ── About ────────────────────────────────────── */
+.about{padding:var(--section-py) 0;background:var(--bg)}
+.about__layout{
+  display:grid;
+  grid-template-columns:1fr 1.1fr;
+  gap:72px;
+  align-items:start;
+}
+.about__col-img{position:relative}
+.about__portrait{
+  width:100%;aspect-ratio:5/6;
+  object-fit:cover;object-position:center 15%;
+  border-radius:var(--radius-lg);
+  box-shadow:0 16px 48px rgba(0,0,0,0.07);
+}
+.about__tag{
+  position:absolute;bottom:24px;right:-16px;
+  background:var(--sage-600);
+  color:var(--white);
+  padding:14px 22px;
+  border-radius:var(--radius-lg);
+  box-shadow:0 8px 24px rgba(59,90,74,0.25);
+}
+.about__tag-title{
+  font-size:0.68rem;font-weight:600;
+  letter-spacing:0.14em;text-transform:uppercase;
+  opacity:0.75;margin-bottom:4px;
+}
+.about__tag-text{
+  font-family:var(--font-serif);
+  font-size:1rem;font-weight:400;
+  line-height:1.3;
+}
+.about__col-text .heading{margin-bottom:8px}
+.about__col-text .divider{margin-bottom:20px}
+.about__col-text p{
+  color:var(--text);margin-bottom:16px;
+  font-size:0.95rem;line-height:1.8;
+}
+.about__quals{
+  margin-top:32px;
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;
+}
+.about__qual{
+  padding:16px 18px;
+  border:1px solid var(--border-light);
+  border-radius:var(--radius-lg);
+  background:var(--bg-card);
+  transition:all .25s var(--ease);
+}
+.about__qual:hover{border-color:var(--sage-400);box-shadow:var(--shadow-sm)}
+.about__qual h4{
+  font-family:var(--font-serif);font-size:0.88rem;font-weight:400;
+  color:var(--charcoal);margin-bottom:3px;
+}
+.about__qual p{
+  font-size:0.73rem;color:var(--text-light);
+  margin-bottom:0;line-height:1.5;
+}
+
+/* ── Practice Areas ───────────────────────────── */
+.practice{
+  padding:var(--section-py) 0;
+  background:var(--forest);
+  position:relative;
+}
+.practice__header{
+  max-width:540px;
+  margin-bottom:56px;
+}
+.practice__header .label{color:var(--sage-300)}
+.practice__header .divider{background:var(--sage-400)}
+
+.practice__list{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:0;
+}
+.practice__item{
+  display:grid;
+  grid-template-columns:40px 1fr auto;
+  gap:24px;
+  align-items:start;
+  padding:32px 0;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  transition:all .3s var(--ease);
+  cursor:default;
+}
+.practice__item:first-child{border-top:1px solid rgba(255,255,255,0.08)}
+.practice__item:hover{padding-left:12px;background:rgba(255,255,255,0.02);border-radius:var(--radius)}
+.practice__item-num{
+  font-family:var(--font-serif);font-size:1.1rem;font-weight:400;
+  color:var(--sage-400);padding-top:2px;
+}
+.practice__item-body h3{
+  font-family:var(--font-serif);font-size:1.2rem;font-weight:400;
+  color:var(--bg);margin-bottom:8px;
+  transition:color .25s var(--ease);
+}
+.practice__item:hover .practice__item-body h3{color:var(--sage-300)}
+.practice__item-body p{
+  font-size:0.88rem;color:rgba(255,255,255,0.5);
+  line-height:1.7;max-width:560px;
+}
+.practice__item-arrow{
+  font-size:0.85rem;color:var(--sage-400);
+  padding-top:4px;
+  transition:transform .25s var(--ease);
+}
+.practice__item:hover .practice__item-arrow{transform:translateX(4px)}
+
+/* ── Approach ─────────────────────────────────── */
+.approach{padding:var(--section-py) 0;background:var(--bg)}
+.approach__header{text-align:center;margin-bottom:56px}
+.approach__header .heading{margin-bottom:8px}
+.approach__header .divider{margin:16px auto 20px}
+.approach__subtext{
+  font-size:0.98rem;color:var(--text-muted);
+  max-width:520px;margin:0 auto;line-height:1.7;
+}
+.approach__grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+.approach__card{
+  padding:36px 28px;
+  border:1px solid var(--border-light);
+  border-radius:var(--radius-lg);
+  background:var(--bg-card);
+  transition:all .3s var(--ease);
+  position:relative;
+  overflow:hidden;
+}
+.approach__card::before{
+  content:'';position:absolute;top:0;left:0;right:0;
+  height:2px;background:var(--sage-500);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .35s var(--ease);
+}
+.approach__card:hover{
+  border-color:var(--sage-300);
+  box-shadow:0 8px 32px rgba(0,0,0,0.05);
+  transform:translateY(-3px);
+}
+.approach__card:hover::before{transform:scaleX(1)}
+.approach__card-step{
+  font-family:var(--font-serif);font-size:2.2rem;font-weight:700;
+  color:var(--sage-200);line-height:1;margin-bottom:16px;
+}
+.approach__card h3{
+  font-family:var(--font-serif);font-size:1.1rem;font-weight:400;
+  color:var(--charcoal);margin-bottom:10px;
+}
+.approach__card p{
+  font-size:0.85rem;color:var(--text-muted);
+  line-height:1.7;
+}
+
+/* ── Testimonials ─────────────────────────────── */
+.testimonials{
+  padding:var(--section-py) 0;
+  background:var(--bg-alt);
+  border-top:1px solid var(--border-light);
+  border-bottom:1px solid var(--border-light);
+}
+.testimonials__header{text-align:center;margin-bottom:52px}
+.testimonials__header .divider{margin:16px auto 0}
+.testimonials__grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:28px;
+}
+.test__card{
+  background:var(--bg-card);
+  border:1px solid var(--border-light);
+  border-radius:var(--radius-lg);
+  padding:36px 32px;
+  transition:all .3s var(--ease);
+}
+.test__card:hover{box-shadow:0 8px 28px rgba(0,0,0,0.05);border-color:var(--sage-300)}
+.test__card-quote{
+  position:relative;
+  font-family:var(--font-serif);font-size:2.4rem;
+  color:var(--sage-300);line-height:1;margin-bottom:12px;
+}
+.test__card p{
+  font-family:var(--font-serif);font-size:0.98rem;font-style:italic;
+  color:var(--text);line-height:1.7;margin-bottom:24px;
+}
+.test__card-author{
+  display:flex;align-items:center;gap:12px;
+  padding-top:20px;
+  border-top:1px solid var(--border-light);
+}
+.test__card-avatar{
+  width:40px;height:40px;
+  background:var(--sage-100);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-serif);font-weight:700;font-size:0.85rem;
+  color:var(--sage-600);
+}
+.test__card-name{font-size:0.85rem;font-weight:600;color:var(--charcoal)}
+.test__card-role{font-size:0.73rem;color:var(--text-light)}
+
+/* ── CTA ──────────────────────────────────────── */
+.cta{
+  padding:80px 0;
+  background:var(--sage-600);
+  position:relative;
+  overflow:hidden;
+}
+.cta::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 20% 50%,rgba(255,255,255,0.05) 0%,transparent 60%),
+    radial-gradient(circle at 80% 50%,rgba(0,0,0,0.08) 0%,transparent 60%);
+  pointer-events:none;
+}
+.cta__inner{
+  position:relative;z-index:1;
+  text-align:center;max-width:580px;margin:0 auto;
+}
+.cta h2{
+  font-family:var(--font-serif);
+  font-size:clamp(1.7rem,3.2vw,2.2rem);
+  font-weight:400;color:var(--white);
+  margin-bottom:14px;
+}
+.cta p{
+  color:rgba(255,255,255,0.75);
+  margin-bottom:32px;font-size:0.98rem;line-height:1.7;
+}
+.cta__btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ── Contact ──────────────────────────────────── */
+.contact{padding:var(--section-py) 0;background:var(--bg)}
+.contact__layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:56px;align-items:start;
+}
+.contact__info .heading{margin-bottom:8px}
+.contact__info .divider{margin-bottom:16px}
+.contact__info > p{
+  font-size:0.95rem;color:var(--text-muted);
+  line-height:1.75;margin-bottom:36px;
+}
+.contact__row{
+  display:flex;gap:16px;margin-bottom:24px;align-items:flex-start;
+}
+.contact__row-icon{
+  width:40px;height:40px;flex-shrink:0;
+  background:var(--sage-100);border-radius:var(--radius-lg);
+  display:flex;align-items:center;justify-content:center;
+}
+.contact__row-icon svg{width:17px;height:17px;color:var(--sage-600);stroke-width:1.8}
+.contact__row h4{
+  font-size:0.78rem;font-weight:600;
+  color:var(--charcoal);margin-bottom:2px;
+}
+.contact__row p,.contact__row a{
+  font-size:0.88rem;color:var(--text);line-height:1.6;
+}
+.contact__row a:hover{color:var(--sage-600)}
+
+.contact__form{
+  background:var(--bg-alt);
+  border:1px solid var(--border-light);
+  border-radius:var(--radius-lg);
+  padding:36px 32px;
+}
+.contact__form h3{
+  font-family:var(--font-serif);font-size:1.25rem;font-weight:400;
+  color:var(--charcoal);margin-bottom:4px;
+}
+.contact__form > p{
+  font-size:0.82rem;color:var(--text-light);margin-bottom:24px;
+}
+.f-row{margin-bottom:16px}
+.f-row label{
+  display:block;font-size:0.75rem;font-weight:600;
+  color:var(--charcoal);margin-bottom:5px;
+}
+.f-row input,.f-row select,.f-row textarea{
+  width:100%;padding:11px 14px;
+  border:1.5px solid var(--border);
+  border-radius:var(--radius);
+  font-family:var(--font-sans);font-size:0.88rem;
+  color:var(--text);background:var(--bg-card);
+  transition:border-color .25s var(--ease);
+}
+.f-row input:focus,.f-row select:focus,.f-row textarea:focus{
+  outline:none;border-color:var(--sage-500);
+}
+.f-row textarea{resize:vertical;min-height:90px}
+.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.f-submit{
+  width:100%;padding:13px;margin-top:4px;
+  background:var(--sage-600);color:var(--white);
+  border:none;border-radius:var(--radius);
+  font-family:var(--font-sans);font-size:0.88rem;font-weight:600;
+  cursor:pointer;transition:all .25s var(--ease);
+}
+.f-submit:hover{background:var(--sage-700);transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,90,74,0.2)}
+.f-note{text-align:center;font-size:0.7rem;color:var(--text-light);margin-top:12px}
+
+/* ── Footer ───────────────────────────────────── */
+.footer{
+  background:var(--forest);
+  padding:56px 0 0;
+  border-top:2px solid var(--sage-600);
+}
+.footer__grid{
+  display:grid;
+  grid-template-columns:1.6fr 1fr 1fr 1.2fr;
+  gap:40px;
+  padding-bottom:40px;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.footer__brand{max-width:260px}
+.footer__brand .nav__logo{margin-bottom:14px}
+.footer__brand .nav__mark{border-color:var(--sage-400);color:var(--sage-400)}
+.footer__brand .nav__name{color:var(--bg)}
+.footer__brand p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.65}
+.footer__col h4{
+  font-size:0.68rem;font-weight:600;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--sage-400);margin-bottom:18px;
+}
+.footer__col li{margin-bottom:9px}
+.footer__col li a{
+  font-size:0.82rem;color:rgba(255,255,255,0.45);
+  transition:color .25s var(--ease);
+}
+.footer__col li a:hover{color:var(--sage-300)}
+.footer__col p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.65}
+.footer__col a[href^="tel"],.footer__col a[href^="mailto"]{
+  color:rgba(255,255,255,0.55);display:block;margin-top:4px;font-size:0.82rem;
+}
+.footer__col a[href^="tel"]:hover,.footer__col a[href^="mailto"]:hover{color:var(--sage-300)}
+.footer__bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:22px 0;
+}
+.footer__bottom p{font-size:0.72rem;color:rgba(255,255,255,0.35)}
+.footer__bottom-links{display:flex;gap:20px}
+.footer__bottom-links a{
+  font-size:0.72rem;color:rgba(255,255,255,0.35);
+  transition:color .25s var(--ease);
+}
+.footer__bottom-links a:hover{color:var(--sage-300)}
+
+/* ── Responsive ───────────────────────────────── */
+@media(max-width:1024px){
+  .hero__grid{grid-template-columns:1fr;gap:40px}
+  .hero__visual{max-width:380px}
+  .about__layout{grid-template-columns:1fr;gap:40px}
+  .about__col-img{max-width:420px}
+  .approach__grid{grid-template-columns:1fr 1fr}
+  .contact__layout{grid-template-columns:1fr}
+  .footer__grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  :root{--section-py:72px}
+  .nav__links{
+    display:none;position:fixed;top:68px;left:0;right:0;
+    background:rgba(250,250,247,0.98);
+    flex-direction:column;padding:24px 28px;gap:18px;
+    border-bottom:1px solid var(--border-light);
+    box-shadow:0 8px 24px rgba(0,0,0,0.06);
+  }
+  .nav__links.open{display:flex}
+  .nav__toggle{display:block}
+  .nav__cta{width:100%;text-align:center;justify-content:center}
+
+  .hero{padding:120px 0 60px}
+  .hero h1{font-size:2rem}
+  .hero__visual{display:none}
+  .hero__img-float{display:none}
+
+  .trust__inner{gap:28px}
+  .trust__sep{display:none}
+
+  .practice__item{grid-template-columns:32px 1fr;gap:16px}
+  .practice__item-arrow{display:none}
+
+  .approach__grid{grid-template-columns:1fr}
+  .testimonials__grid{grid-template-columns:1fr}
+  .about__quals{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr}
+
+  .footer__grid{grid-template-columns:1fr;gap:28px}
+  .footer__bottom{flex-direction:column;gap:10px;text-align:center}
+}
+@media(max-width:480px){
+  .hero h1{font-size:1.75rem}
+  .heading{font-size:1.55rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ── Nav ─────────────────────────────────────── -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#" class="nav__logo">
+      <div class="nav__mark">SC</div>
+      <div class="nav__name">Simone V. Cartwright</div>
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#practice">Practice Areas</a>
+      <a href="#approach">Approach</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="nav__cta">Request Consultation</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ────────────────────────────────────── -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="hero__grid">
+      <div class="hero__text">
+        <div class="hero__badge">
+          <span class="hero__badge-line"></span>
+          <span class="hero__badge-txt">Financial &amp; Regulatory Law, Nassau</span>
+        </div>
+        <h1>Clarity in <em>Complex</em> Financial Markets</h1>
+        <p class="hero__sub">
+          Advising financial institutions, investment funds, fintech companies, and private clients on Bahamian regulatory compliance, fund structuring, and cross-border financial law.
+        </p>
+        <div class="hero__actions">
+          <a href="#contact" class="btn btn--sage">Schedule a Consultation</a>
+          <a href="tel:+12423268400" class="btn btn--ghost">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.11 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (242) 326-8400
+          </a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <img class="hero__img-main" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80" alt="Simone V. Cartwright, Esq.">
+        <div class="hero__img-float">
+          <div class="hero__img-float-num">18+</div>
+          <div class="hero__img-float-label">Years in Financial Law</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Trust Strip ─────────────────────────────── -->
+<div class="trust">
+  <div class="wrap">
+    <div class="trust__inner">
+      <div class="trust__item reveal"><div class="trust__item-num">18+</div><div class="trust__item-label">Years of Practice</div></div>
+      <div class="trust__sep"></div>
+      <div class="trust__item reveal d1"><div class="trust__item-num">$2.8B+</div><div class="trust__item-label">In Transactions Advised</div></div>
+      <div class="trust__sep"></div>
+      <div class="trust__item reveal d2"><div class="trust__item-num">340+</div><div class="trust__item-label">Fund Structures</div></div>
+      <div class="trust__sep"></div>
+      <div class="trust__item reveal d3"><div class="trust__item-num">6</div><div class="trust__item-label">Practice Areas</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── About ───────────────────────────────────── -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about__layout">
+      <div class="about__col-img reveal">
+        <img class="about__portrait" src="https://images.unsplash.com/photo-1580894742597-87bc8789db3d?w=800&q=80" alt="Simone Cartwright in her office">
+        <div class="about__tag">
+          <div class="about__tag-title">Recognized By</div>
+          <div class="about__tag-text">Chambers &amp; Partners<br>Caribbean Guide 2025</div>
+        </div>
+      </div>
+      <div class="about__col-text">
+        <div class="label reveal">About Simone V. Cartwright</div>
+        <h2 class="heading reveal d1">A Trusted Voice in <em>Bahamian Financial Law</em></h2>
+        <div class="divider reveal d2"></div>
+        <p class="reveal d2">
+          Simone V. Cartwright was called to the Bahamas Bar in 2007 and has since built one of Nassau's most respected financial law practices. She advises domestic and international clients on the full range of regulatory, transactional, and compliance matters that arise under the Securities Industry Act, the Investment Funds Act, and the Banks and Trust Companies Regulation Act.
+        </p>
+        <p class="reveal d3">
+          Before establishing her own chambers, Simone served as Associate Counsel at the Securities Commission of The Bahamas, where she gained firsthand insight into the regulatory landscape that now informs every aspect of her practice. She holds an LL.B. from the University of the West Indies and an LL.M. in International Banking and Finance Law from University College London.
+        </p>
+        <div class="about__quals reveal d4">
+          <div class="about__qual">
+            <h4>LL.B., University of the West Indies</h4>
+            <p>Cave Hill Campus, Barbados</p>
+          </div>
+          <div class="about__qual">
+            <h4>LL.M., UCL Laws</h4>
+            <p>International Banking &amp; Finance Law</p>
+          </div>
+          <div class="about__qual">
+            <h4>Bahamas Bar Association</h4>
+            <p>Licensed since 2007</p>
+          </div>
+          <div class="about__qual">
+            <h4>Securities Commission (Fmr.)</h4>
+            <p>Associate Counsel, 2007 to 2012</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Practice Areas ──────────────────────────── -->
+<section class="practice" id="practice">
+  <div class="wrap">
+    <div class="practice__header">
+      <div class="label">Areas of Expertise</div>
+      <h2 class="heading heading--light reveal">Financial &amp; Regulatory <em>Practice Areas</em></h2>
+      <div class="divider reveal d1"></div>
+    </div>
+
+    <div class="practice__list">
+      <div class="practice__item reveal">
+        <span class="practice__item-num">01</span>
+        <div class="practice__item-body">
+          <h3>Banking &amp; Financial Services Regulation</h3>
+          <p>Licensing applications, ongoing compliance with the Central Bank and Securities Commission, and regulatory investigations under the Banks and Trust Companies Regulation Act.</p>
+        </div>
+        <span class="practice__item-arrow">&rarr;</span>
+      </div>
+
+      <div class="practice__item reveal d1">
+        <span class="practice__item-num">02</span>
+        <div class="practice__item-body">
+          <h3>Investment Funds &amp; Securities</h3>
+          <p>Structuring SMART Funds, Professional Funds, and Standard Funds under the Investment Funds Act. Offering memoranda, subscription agreements, and ongoing governance advisory.</p>
+        </div>
+        <span class="practice__item-arrow">&rarr;</span>
+      </div>
+
+      <div class="practice__item reveal d2">
+        <span class="practice__item-num">03</span>
+        <div class="practice__item-body">
+          <h3>Anti-Money Laundering &amp; Compliance</h3>
+          <p>AML/KYC program design, suspicious transaction reporting, compliance audits, and representation before the Financial Intelligence Unit and Compliance Commission.</p>
+        </div>
+        <span class="practice__item-arrow">&rarr;</span>
+      </div>
+
+      <div class="practice__item reveal d3">
+        <span class="practice__item-num">04</span>
+        <div class="practice__item-body">
+          <h3>Fintech &amp; Digital Assets</h3>
+          <p>Advising on the Digital Assets and Registered Exchanges Act (DARE), token offerings, digital asset exchange licensing, and regulatory sandbox applications.</p>
+        </div>
+        <span class="practice__item-arrow">&rarr;</span>
+      </div>
+
+      <div class="practice__item reveal d4">
+        <span class="practice__item-num">05</span>
+        <div class="practice__item-body">
+          <h3>Wealth Structuring &amp; Private Client</h3>
+          <p>Purpose trusts, private trust companies, family offices, and multi-jurisdictional estate planning for high-net-worth individuals establishing presence in The Bahamas.</p>
+        </div>
+        <span class="practice__item-arrow">&rarr;</span>
+      </div>
+
+      <div class="practice__item reveal d5">
+        <span class="practice__item-num">06</span>
+        <div class="practice__item-body">
+          <h3>Corporate Governance &amp; Risk</h3>
+          <p>Board advisory, director fiduciary duties, internal controls, corporate restructuring, and risk management frameworks for regulated financial entities.</p>
+        </div>
+        <span class="practice__item-arrow">&rarr;</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Approach ────────────────────────────────── -->
+<section class="approach" id="approach">
+  <div class="wrap">
+    <div class="approach__header">
+      <div class="label">How I Work</div>
+      <h2 class="heading reveal">A Measured, <em>Client-First</em> Approach</h2>
+      <div class="divider reveal d1"></div>
+      <p class="approach__subtext reveal d2">Every engagement begins with understanding the full picture of your regulatory landscape, commercial objectives, and risk tolerance.</p>
+    </div>
+    <div class="approach__grid">
+      <div class="approach__card reveal">
+        <div class="approach__card-step">01</div>
+        <h3>Regulatory Assessment</h3>
+        <p>A thorough review of your business model, licensing requirements, and exposure to Bahamian financial regulations. I identify obligations, gaps, and opportunities before any action is taken.</p>
+      </div>
+      <div class="approach__card reveal d1">
+        <div class="approach__card-step">02</div>
+        <h3>Strategic Structuring</h3>
+        <p>Developing compliant structures that serve your commercial goals. Whether launching a fund, obtaining a licence, or reorganising a trust, every solution is built around your specific circumstances.</p>
+      </div>
+      <div class="approach__card reveal d2">
+        <div class="approach__card-step">03</div>
+        <h3>Ongoing Partnership</h3>
+        <p>Regulatory landscapes evolve. I provide continuous advisory support, monitoring legislative changes, managing filings, and ensuring your operations remain fully compliant as you grow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Testimonials ────────────────────────────── -->
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="testimonials__header">
+      <div class="label">Client Testimonials</div>
+      <h2 class="heading reveal">Trusted by Financial <em>Professionals</em></h2>
+      <div class="divider reveal d1"></div>
+    </div>
+    <div class="testimonials__grid">
+      <div class="test__card reveal">
+        <div class="test__card-quote">&ldquo;</div>
+        <p>Simone guided our fund through the full licensing process under the Investment Funds Act with remarkable efficiency. Her deep familiarity with the Securities Commission made what could have been a months-long ordeal move smoothly and predictably.</p>
+        <div class="test__card-author">
+          <div class="test__card-avatar">KT</div>
+          <div>
+            <div class="test__card-name">Kenneth Thompson</div>
+            <div class="test__card-role">Managing Partner, Abaco Capital Partners</div>
+          </div>
+        </div>
+      </div>
+      <div class="test__card reveal d1">
+        <div class="test__card-quote">&ldquo;</div>
+        <p>When we needed to restructure our Bahamian operations to meet new AML compliance requirements, Simone provided exactly the kind of clear, actionable counsel we needed. She does not just identify problems, she builds practical solutions.</p>
+        <div class="test__card-author">
+          <div class="test__card-avatar">LR</div>
+          <div>
+            <div class="test__card-name">Laura Richardson</div>
+            <div class="test__card-role">Chief Compliance Officer, Atlantic Trust Group</div>
+          </div>
+        </div>
+      </div>
+      <div class="test__card reveal d2">
+        <div class="test__card-quote">&ldquo;</div>
+        <p>Our family office engaged Simone to establish a purpose trust and private trust company in Nassau. Her expertise in Bahamian trust law and her attention to our family's cross-border complexities gave us complete confidence in the structure.</p>
+        <div class="test__card-author">
+          <div class="test__card-avatar">DP</div>
+          <div>
+            <div class="test__card-name">Daniel Pratt</div>
+            <div class="test__card-role">Founder, Pratt Family Office, New York</div>
+          </div>
+        </div>
+      </div>
+      <div class="test__card reveal d3">
+        <div class="test__card-quote">&ldquo;</div>
+        <p>Simone's knowledge of the DARE Act was essential when we launched our digital asset exchange. She navigated the regulatory sandbox process and helped us secure our licence well ahead of our projected timeline.</p>
+        <div class="test__card-author">
+          <div class="test__card-avatar">MJ</div>
+          <div>
+            <div class="test__card-name">Marcus Johnson</div>
+            <div class="test__card-role">CEO, BahaChain Digital Ltd.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ─────────────────────────────────────── -->
+<section class="cta">
+  <div class="wrap">
+    <div class="cta__inner reveal">
+      <h2>Ready to Discuss Your Financial Legal Matter?</h2>
+      <p>Whether you are navigating a licensing application, structuring a fund, or seeking ongoing compliance advisory, I am here to provide clear, experienced counsel.</p>
+      <div class="cta__btns">
+        <a href="#contact" class="btn btn--white">Schedule a Consultation</a>
+        <a href="tel:+12423268400" class="btn btn--outline-light">Call (242) 326-8400</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ─────────────────────────────────── -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact__layout">
+      <div class="contact__info">
+        <div class="label reveal">Get in Touch</div>
+        <h2 class="heading reveal d1">Request a <em>Consultation</em></h2>
+        <div class="divider reveal d2"></div>
+        <p class="reveal d2">Initial consultations are available by appointment. Please reach out by phone, email, or the enquiry form, and I will respond within one business day.</p>
+
+        <div class="contact__row reveal d3">
+          <div class="contact__row-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h4>Office Address</h4>
+            <p>Cartwright Chambers<br>Suite 204, Goodman's Bay Corporate Centre<br>West Bay Street<br>P.O. Box CB-12150<br>Nassau, New Providence, The Bahamas</p>
+          </div>
+        </div>
+        <div class="contact__row reveal d4">
+          <div class="contact__row-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.11 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <h4>Telephone</h4>
+            <p><a href="tel:+12423268400">+1 (242) 326-8400</a></p>
+          </div>
+        </div>
+        <div class="contact__row reveal d5">
+          <div class="contact__row-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:simone@cartwrightlaw.bs">simone@cartwrightlaw.bs</a></p>
+          </div>
+        </div>
+        <div class="contact__row reveal d6">
+          <div class="contact__row-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h4>Office Hours</h4>
+            <p>Monday to Friday: 9:00 AM to 5:30 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact__form reveal d1">
+        <h3>Send an Enquiry</h3>
+        <p>All information shared is kept strictly confidential.</p>
+        <div class="f-grid">
+          <div class="f-row">
+            <label for="fn">Full Name *</label>
+            <input type="text" id="fn" placeholder="Your full name" required>
+          </div>
+          <div class="f-row">
+            <label for="fe">Email Address *</label>
+            <input type="email" id="fe" placeholder="you@example.com" required>
+          </div>
+        </div>
+        <div class="f-grid">
+          <div class="f-row">
+            <label for="fp">Phone Number</label>
+            <input type="tel" id="fp" placeholder="+1 (242) 000-0000">
+          </div>
+          <div class="f-row">
+            <label for="fa">Area of Interest</label>
+            <select id="fa">
+              <option value="">Select a practice area</option>
+              <option>Banking &amp; Financial Services Regulation</option>
+              <option>Investment Funds &amp; Securities</option>
+              <option>Anti-Money Laundering &amp; Compliance</option>
+              <option>Fintech &amp; Digital Assets</option>
+              <option>Wealth Structuring &amp; Private Client</option>
+              <option>Corporate Governance &amp; Risk</option>
+              <option>Other Financial Matter</option>
+            </select>
+          </div>
+        </div>
+        <div class="f-row">
+          <label for="fm">Tell Us About Your Matter *</label>
+          <textarea id="fm" placeholder="Briefly describe your legal matter or question..." required></textarea>
+        </div>
+        <button class="f-submit" type="button" onclick="this.textContent='Thank You. We Will Be in Touch.';this.disabled=true;this.style.opacity='0.7'">Submit Enquiry</button>
+        <p class="f-note">Your information is kept strictly confidential.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ──────────────────────────────────── -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="#" class="nav__logo">
+          <div class="nav__mark">SC</div>
+          <div class="nav__name">Simone V. Cartwright</div>
+        </a>
+        <p>Providing clear, experienced financial and regulatory legal counsel to institutions, funds, and private clients across The Bahamas since 2012.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Practice Areas</h4>
+        <ul>
+          <li><a href="#practice">Banking Regulation</a></li>
+          <li><a href="#practice">Investment Funds</a></li>
+          <li><a href="#practice">AML &amp; Compliance</a></li>
+          <li><a href="#practice">Fintech &amp; Digital Assets</a></li>
+          <li><a href="#practice">Wealth Structuring</a></li>
+          <li><a href="#practice">Corporate Governance</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <p>Cartwright Chambers<br>Suite 204, Goodman's Bay Corporate Centre<br>West Bay Street<br>Nassau, The Bahamas</p>
+        <a href="tel:+12423268400">+1 (242) 326-8400</a>
+        <a href="mailto:simone@cartwrightlaw.bs">simone@cartwrightlaw.bs</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Simone V. Cartwright, Financial &amp; Regulatory Law. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── Scripts ─────────────────────────────────── -->
+<script>
+// Mobile nav
+const tog=document.getElementById('navToggle'),lnk=document.getElementById('navLinks');
+tog.addEventListener('click',()=>{tog.classList.toggle('on');lnk.classList.toggle('open')});
+lnk.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{tog.classList.remove('on');lnk.classList.remove('open')}));
+
+// Nav scroll shadow
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)},{passive:true});
+
+// Reveal on scroll
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}})
+},{threshold:0.12,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>

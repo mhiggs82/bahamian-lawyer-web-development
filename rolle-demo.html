@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cedric A. Rolle | Maritime & Admiralty Law | Nassau, Bahamas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ── Reset & Variables ───────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy-900: #0B1628;
+  --navy-800: #0F1E36;
+  --navy-700: #162A48;
+  --navy-600: #1D3660;
+  --navy-500: #264A80;
+  --slate-400: #8E9BB3;
+  --slate-300: #B0BBCE;
+  --slate-200: #D0D7E3;
+  --slate-100: #E8ECF2;
+  --cream: #F6F3ED;
+  --cream-dark: #EDE8DF;
+  --gold-500: #C9A84C;
+  --gold-400: #D4B85E;
+  --gold-300: #DFCA7A;
+  --gold-600: #A8893A;
+  --white: #FFFFFF;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', 'Segoe UI', sans-serif;
+  --max-width: 1200px;
+  --section-pad: 100px;
+  --radius: 6px;
+  --shadow-sm: 0 1px 3px rgba(11,22,40,0.08);
+  --shadow-md: 0 4px 20px rgba(11,22,40,0.10);
+  --shadow-lg: 0 12px 40px rgba(11,22,40,0.14);
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--navy-800);
+  background: var(--cream);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ── Utility ─────────────────────────────────────── */
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+  margin-bottom: 12px;
+}
+.section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--navy-900);
+}
+.section-heading--light { color: var(--cream); }
+.section-subtext {
+  font-size: 1.05rem;
+  color: var(--slate-400);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* ── Animations ──────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.anim { opacity: 0; }
+.anim.visible { animation: fadeUp 0.7s ease forwards; }
+.anim-d1.visible { animation-delay: 0.1s; }
+.anim-d2.visible { animation-delay: 0.2s; }
+.anim-d3.visible { animation-delay: 0.3s; }
+.anim-d4.visible { animation-delay: 0.4s; }
+.anim-d5.visible { animation-delay: 0.5s; }
+
+/* ── Navigation ──────────────────────────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(11,22,40,0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+  transition: background var(--transition);
+}
+.nav__inner {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+  height: 72px;
+}
+.nav__logo {
+  display: flex; align-items: center; gap: 12px;
+}
+.nav__logo-mark {
+  width: 40px; height: 40px;
+  background: linear-gradient(135deg, var(--gold-500), var(--gold-400));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700; font-size: 1.1rem;
+  color: var(--navy-900);
+}
+.nav__logo-text {
+  font-family: var(--font-display);
+  font-size: 1.15rem; font-weight: 600;
+  color: var(--cream);
+  line-height: 1.2;
+}
+.nav__logo-text span {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.6rem; font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+  margin-top: 1px;
+}
+.nav__links {
+  display: flex; align-items: center; gap: 32px;
+}
+.nav__links a {
+  font-size: 0.85rem; font-weight: 500;
+  color: var(--slate-300);
+  transition: color var(--transition);
+  letter-spacing: 0.01em;
+}
+.nav__links a:hover { color: var(--gold-400); }
+.nav__cta {
+  background: linear-gradient(135deg, var(--gold-500), var(--gold-600));
+  color: var(--navy-900) !important;
+  padding: 10px 22px;
+  border-radius: var(--radius);
+  font-weight: 600 !important;
+  font-size: 0.82rem !important;
+  letter-spacing: 0.04em;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.nav__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(201,168,76,0.35);
+  color: var(--navy-900) !important;
+}
+
+/* Mobile nav toggle */
+.nav__toggle {
+  display: none;
+  background: none; border: none; cursor: pointer;
+  width: 28px; height: 20px; position: relative;
+}
+.nav__toggle span {
+  display: block; width: 100%; height: 2px;
+  background: var(--cream);
+  position: absolute; left: 0;
+  transition: var(--transition);
+}
+.nav__toggle span:nth-child(1) { top: 0; }
+.nav__toggle span:nth-child(2) { top: 9px; }
+.nav__toggle span:nth-child(3) { top: 18px; }
+.nav__toggle.active span:nth-child(1) { top: 9px; transform: rotate(45deg); }
+.nav__toggle.active span:nth-child(2) { opacity: 0; }
+.nav__toggle.active span:nth-child(3) { top: 9px; transform: rotate(-45deg); }
+
+/* ── Hero ────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex; align-items: center;
+  background: var(--navy-900);
+  overflow: hidden;
+}
+.hero__bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80');
+  background-size: cover; background-position: center 40%;
+  opacity: 0;
+  animation: fadeIn 1.2s 0.2s ease forwards;
+}
+.hero__bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(11,22,40,0.92) 0%,
+    rgba(15,30,54,0.85) 40%,
+    rgba(22,42,72,0.70) 100%
+  );
+}
+.hero__content {
+  position: relative; z-index: 2;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 140px 24px 80px;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 60px;
+  align-items: center;
+}
+.hero__text { }
+.hero__badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(201,168,76,0.12);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 100px;
+  padding: 6px 16px 6px 8px;
+  margin-bottom: 28px;
+  animation: fadeUp 0.7s 0.4s ease both;
+}
+.hero__badge-dot {
+  width: 8px; height: 8px;
+  background: var(--gold-500);
+  border-radius: 50%;
+}
+.hero__badge-text {
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-400);
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 5.5vw, 3.8rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--cream);
+  margin-bottom: 20px;
+  animation: fadeUp 0.7s 0.55s ease both;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold-400);
+}
+.hero__sub {
+  font-size: 1.1rem;
+  color: var(--slate-300);
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 36px;
+  animation: fadeUp 0.7s 0.7s ease both;
+}
+.hero__btns {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  animation: fadeUp 0.7s 0.85s ease both;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.9rem; font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all var(--transition);
+  cursor: pointer; border: none;
+}
+.btn--gold {
+  background: linear-gradient(135deg, var(--gold-500), var(--gold-600));
+  color: var(--navy-900);
+}
+.btn--gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(201,168,76,0.4);
+}
+.btn--outline {
+  background: transparent;
+  border: 1.5px solid rgba(201,168,76,0.4);
+  color: var(--gold-400);
+}
+.btn--outline:hover {
+  border-color: var(--gold-500);
+  background: rgba(201,168,76,0.08);
+}
+.btn--dark {
+  background: var(--navy-700);
+  color: var(--cream);
+}
+.btn--dark:hover {
+  background: var(--navy-600);
+  transform: translateY(-2px);
+}
+
+/* Hero portrait card */
+.hero__portrait {
+  animation: fadeUp 0.8s 0.6s ease both;
+}
+.hero__portrait-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+}
+.hero__portrait-img {
+  width: 100%; aspect-ratio: 3/4;
+  border-radius: 8px;
+  object-fit: cover; object-position: center 20%;
+  margin-bottom: 16px;
+}
+.hero__portrait-name {
+  font-family: var(--font-display);
+  font-size: 1.3rem; font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 2px;
+}
+.hero__portrait-title {
+  font-size: 0.78rem; font-weight: 500;
+  color: var(--gold-500);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.hero__portrait-bar {
+  display: flex; gap: 16px;
+}
+.hero__portrait-stat {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid rgba(201,168,76,0.18);
+}
+.hero__portrait-stat strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.5rem; font-weight: 700;
+  color: var(--gold-400);
+}
+.hero__portrait-stat small {
+  font-size: 0.65rem; font-weight: 500;
+  color: var(--slate-400);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── Stats ribbon ────────────────────────────────── */
+.stats {
+  background: var(--navy-800);
+  border-top: 1px solid rgba(201,168,76,0.1);
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+}
+.stats__inner {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  max-width: var(--max-width); margin: 0 auto;
+}
+.stats__item {
+  text-align: center;
+  padding: 36px 16px;
+  border-right: 1px solid rgba(201,168,76,0.08);
+}
+.stats__item:last-child { border-right: none; }
+.stats__num {
+  font-family: var(--font-display);
+  font-size: 2.2rem; font-weight: 700;
+  color: var(--gold-400);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stats__label {
+  font-size: 0.72rem; font-weight: 500;
+  color: var(--slate-400);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* ── About ───────────────────────────────────────── */
+.about {
+  padding: var(--section-pad) 0;
+  background: var(--cream);
+}
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.about__img-wrap {
+  position: relative;
+}
+.about__img {
+  width: 100%; border-radius: 10px;
+  object-fit: cover; aspect-ratio: 4/5;
+  box-shadow: var(--shadow-lg);
+}
+.about__img-accent {
+  position: absolute;
+  bottom: -20px; right: -20px;
+  width: 160px; height: 160px;
+  background: linear-gradient(135deg, var(--gold-500), var(--gold-300));
+  border-radius: 10px;
+  z-index: -1;
+  opacity: 0.25;
+}
+.about__text .section-heading { margin-bottom: 20px; }
+.about__text p {
+  color: var(--navy-700);
+  margin-bottom: 16px;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.about__highlights {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px; margin-top: 28px;
+}
+.about__highlight {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 16px;
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--slate-100);
+}
+.about__highlight-icon {
+  width: 36px; height: 36px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--gold-500), var(--gold-300));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.about__highlight-icon svg { width: 16px; height: 16px; }
+.about__highlight h4 {
+  font-size: 0.85rem; font-weight: 600;
+  color: var(--navy-900);
+  margin-bottom: 2px;
+}
+.about__highlight p {
+  font-size: 0.78rem; color: var(--slate-400);
+  margin-bottom: 0; line-height: 1.5;
+}
+
+/* ── Practice Areas ──────────────────────────────── */
+.practice {
+  padding: var(--section-pad) 0;
+  background: var(--navy-900);
+  position: relative;
+}
+.practice::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 200px;
+  background: linear-gradient(180deg, var(--navy-800), var(--navy-900));
+  pointer-events: none;
+}
+.practice .container { position: relative; z-index: 1; }
+.practice__header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.practice__header .section-subtext {
+  margin: 16px auto 0;
+}
+.practice__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.practice__card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,168,76,0.1);
+  border-radius: 10px;
+  padding: 32px 28px;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.practice__card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-500), var(--gold-300));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.practice__card:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(201,168,76,0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+.practice__card:hover::before { transform: scaleX(1); }
+.practice__card-icon {
+  width: 48px; height: 48px;
+  background: rgba(201,168,76,0.1);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+}
+.practice__card-icon svg { width: 22px; height: 22px; color: var(--gold-400); }
+.practice__card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem; font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 10px;
+}
+.practice__card p {
+  font-size: 0.88rem;
+  color: var(--slate-400);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+.practice__card-link {
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--gold-500);
+  letter-spacing: 0.04em;
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: gap var(--transition);
+}
+.practice__card:hover .practice__card-link { gap: 10px; }
+
+/* ── Credentials ─────────────────────────────────── */
+.credentials {
+  padding: var(--section-pad) 0;
+  background: var(--white);
+}
+.credentials__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.credentials__header .section-heading { margin-bottom: 12px; }
+.credentials__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.credentials__item {
+  text-align: center;
+  padding: 28px 16px;
+  border: 1px solid var(--slate-100);
+  border-radius: 10px;
+  transition: all var(--transition);
+}
+.credentials__item:hover {
+  border-color: var(--gold-500);
+  box-shadow: var(--shadow-md);
+}
+.credentials__item-icon {
+  width: 48px; height: 48px;
+  margin: 0 auto 14px;
+  background: var(--cream);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.credentials__item-icon svg { width: 20px; height: 20px; color: var(--gold-600); }
+.credentials__item h4 {
+  font-size: 0.82rem; font-weight: 600;
+  color: var(--navy-900);
+  margin-bottom: 4px;
+}
+.credentials__item p {
+  font-size: 0.72rem;
+  color: var(--slate-400);
+  line-height: 1.5;
+}
+
+/* ── Testimonials ────────────────────────────────── */
+.testimonials {
+  padding: var(--section-pad) 0;
+  background: var(--cream);
+}
+.testimonials__header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+.testimonial__card {
+  background: var(--white);
+  border: 1px solid var(--slate-100);
+  border-radius: 10px;
+  padding: 36px 32px;
+  transition: all var(--transition);
+  position: relative;
+}
+.testimonial__card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(201,168,76,0.25);
+}
+.testimonial__stars {
+  color: var(--gold-500);
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+.testimonial__quote {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-style: italic;
+  color: var(--navy-700);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+.testimonial__author {
+  display: flex; align-items: center; gap: 12px;
+  border-top: 1px solid var(--slate-100);
+  padding-top: 16px;
+}
+.testimonial__avatar {
+  width: 42px; height: 42px;
+  background: var(--navy-700);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700; font-size: 0.9rem;
+  color: var(--gold-400);
+}
+.testimonial__name {
+  font-size: 0.88rem; font-weight: 600;
+  color: var(--navy-900);
+}
+.testimonial__role {
+  font-size: 0.75rem;
+  color: var(--slate-400);
+}
+
+/* ── CTA Banner ──────────────────────────────────── */
+.cta-banner {
+  padding: 80px 0;
+  background: var(--navy-800);
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80');
+  background-size: cover; background-position: center;
+  opacity: 0.08;
+}
+.cta-banner__inner {
+  position: relative; z-index: 1;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.cta-banner h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 14px;
+}
+.cta-banner p {
+  color: var(--slate-300);
+  margin-bottom: 32px;
+  font-size: 1.02rem;
+}
+.cta-banner__btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ── Contact ─────────────────────────────────────── */
+.contact {
+  padding: var(--section-pad) 0;
+  background: var(--white);
+}
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+.contact__info .section-heading { margin-bottom: 16px; }
+.contact__info > p {
+  color: var(--navy-700);
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+.contact__detail {
+  display: flex; gap: 16px;
+  margin-bottom: 24px;
+  align-items: flex-start;
+}
+.contact__detail-icon {
+  width: 44px; height: 44px; flex-shrink: 0;
+  background: var(--cream);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+}
+.contact__detail-icon svg { width: 18px; height: 18px; color: var(--gold-600); }
+.contact__detail h4 {
+  font-size: 0.82rem; font-weight: 600;
+  color: var(--navy-900);
+  margin-bottom: 2px;
+}
+.contact__detail p, .contact__detail a {
+  font-size: 0.9rem; color: var(--navy-700);
+  line-height: 1.6;
+}
+.contact__detail a:hover { color: var(--gold-600); }
+
+.contact__form-card {
+  background: var(--cream);
+  border: 1px solid var(--cream-dark);
+  border-radius: 12px;
+  padding: 36px 32px;
+}
+.contact__form-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem; font-weight: 600;
+  color: var(--navy-900);
+  margin-bottom: 6px;
+}
+.contact__form-card > p {
+  font-size: 0.85rem; color: var(--slate-400);
+  margin-bottom: 24px;
+}
+.form-row { margin-bottom: 16px; }
+.form-row label {
+  display: block;
+  font-size: 0.78rem; font-weight: 600;
+  color: var(--navy-800);
+  margin-bottom: 6px;
+}
+.form-row input, .form-row select, .form-row textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--slate-200);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--navy-800);
+  background: var(--white);
+  transition: border-color var(--transition);
+}
+.form-row input:focus, .form-row select:focus, .form-row textarea:focus {
+  outline: none;
+  border-color: var(--gold-500);
+}
+.form-row textarea { resize: vertical; min-height: 100px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-submit {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, var(--gold-500), var(--gold-600));
+  color: var(--navy-900);
+  border: none; border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.9rem; font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  margin-top: 4px;
+}
+.form-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201,168,76,0.35);
+}
+.form-note {
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--slate-400);
+  margin-top: 12px;
+}
+
+/* ── Footer ──────────────────────────────────────── */
+.footer {
+  background: var(--navy-900);
+  padding: 64px 0 0;
+  border-top: 2px solid rgba(201,168,76,0.15);
+}
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(201,168,76,0.08);
+}
+.footer__brand .nav__logo { margin-bottom: 16px; }
+.footer__brand p {
+  font-size: 0.85rem;
+  color: var(--slate-400);
+  line-height: 1.65;
+  max-width: 280px;
+}
+.footer__col h4 {
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+  margin-bottom: 20px;
+}
+.footer__col li { margin-bottom: 10px; }
+.footer__col li a {
+  font-size: 0.85rem;
+  color: var(--slate-400);
+  transition: color var(--transition);
+}
+.footer__col li a:hover { color: var(--gold-400); }
+.footer__col p {
+  font-size: 0.85rem;
+  color: var(--slate-400);
+  line-height: 1.65;
+}
+.footer__col a[href^="tel"], .footer__col a[href^="mailto"] {
+  color: var(--slate-300);
+  font-size: 0.85rem;
+  display: block; margin-top: 4px;
+}
+.footer__col a[href^="tel"]:hover, .footer__col a[href^="mailto"]:hover {
+  color: var(--gold-400);
+}
+.footer__bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 24px 0;
+}
+.footer__bottom p {
+  font-size: 0.75rem;
+  color: var(--slate-400);
+}
+.footer__bottom a {
+  font-size: 0.75rem;
+  color: var(--slate-400);
+  transition: color var(--transition);
+}
+.footer__bottom a:hover { color: var(--gold-400); }
+.footer__bottom-links { display: flex; gap: 24px; }
+
+/* ── Mobile Responsive ───────────────────────────── */
+@media (max-width: 1024px) {
+  .hero__content { grid-template-columns: 1fr; gap: 40px; }
+  .hero__portrait { max-width: 340px; }
+  .about__grid { grid-template-columns: 1fr; gap: 40px; }
+  .practice__grid { grid-template-columns: repeat(2, 1fr); }
+  .credentials__grid { grid-template-columns: repeat(2, 1fr); }
+  .contact__grid { grid-template-columns: 1fr; }
+  .footer__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  :root { --section-pad: 64px; }
+  .nav__links { 
+    display: none;
+    position: fixed; top: 72px; left: 0; right: 0;
+    background: rgba(11,22,40,0.97);
+    flex-direction: column;
+    padding: 24px;
+    gap: 20px;
+    border-bottom: 1px solid rgba(201,168,76,0.12);
+  }
+  .nav__links.open { display: flex; }
+  .nav__toggle { display: block; }
+  .nav__cta { width: 100%; text-align: center; justify-content: center; }
+
+  .hero__content { padding: 120px 24px 60px; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero__portrait { display: none; }
+
+  .stats__inner { grid-template-columns: repeat(2, 1fr); }
+  .stats__item { padding: 24px 12px; }
+  .stats__item:nth-child(2) { border-right: none; }
+
+  .practice__grid { grid-template-columns: 1fr; }
+  .credentials__grid { grid-template-columns: 1fr 1fr; }
+  .about__highlights { grid-template-columns: 1fr; }
+  .testimonials__grid { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .footer__grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer__bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.85rem; }
+  .stats__num { font-size: 1.8rem; }
+  .section-heading { font-size: 1.65rem; }
+  .credentials__grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Navigation ───────────────────────────────── -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#" class="nav__logo">
+      <div class="nav__logo-mark">CR</div>
+      <div class="nav__logo-text">
+        Cedric A. Rolle
+        <span>Maritime &amp; Admiralty Law</span>
+      </div>
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#practice-areas">Practice Areas</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="nav__cta">Request Consultation</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ─────────────────────────────────────── -->
+<section class="hero" id="home">
+  <div class="hero__bg" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1920&q=80');"></div>
+  <div class="hero__content">
+    <div class="hero__text">
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        <span class="hero__badge-text">Nassau, Bahamas &middot; Accepting New Clients</span>
+      </div>
+      <h1>Protecting Your Interests on <em>Every Tide</em></h1>
+      <p class="hero__sub">
+        Dedicated maritime and admiralty law counsel for vessel owners, commercial operators, insurers, and seafarers throughout The Bahamas and across international waters.
+      </p>
+      <div class="hero__btns">
+        <a href="#contact" class="btn btn--gold">Schedule Consultation</a>
+        <a href="tel:+12423228800" class="btn btn--outline">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (242) 322-8800
+        </a>
+      </div>
+    </div>
+    <div class="hero__portrait">
+      <div class="hero__portrait-card">
+        <img class="hero__portrait-img" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80" alt="Cedric A. Rolle, Esq.">
+        <div class="hero__portrait-name">Cedric A. Rolle, Esq.</div>
+        <div class="hero__portrait-title">Founder &amp; Principal Attorney</div>
+        <div class="hero__portrait-bar">
+          <div class="hero__portrait-stat">
+            <strong>20+</strong>
+            <small>Years</small>
+          </div>
+          <div class="hero__portrait-stat">
+            <strong>1,200+</strong>
+            <small>Cases</small>
+          </div>
+          <div class="hero__portrait-stat">
+            <strong>98%</strong>
+            <small>Success</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Stats Ribbon ─────────────────────────────── -->
+<div class="stats">
+  <div class="stats__inner">
+    <div class="stats__item anim"><div class="stats__num">20+</div><div class="stats__label">Years of Practice</div></div>
+    <div class="stats__item anim anim-d1"><div class="stats__num">1,200+</div><div class="stats__label">Maritime Cases</div></div>
+    <div class="stats__item anim anim-d2"><div class="stats__num">98%</div><div class="stats__label">Client Satisfaction</div></div>
+    <div class="stats__item anim anim-d3"><div class="stats__num">6</div><div class="stats__label">Core Practice Areas</div></div>
+  </div>
+</div>
+
+<!-- ── About ────────────────────────────────────── -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about__grid">
+      <div class="about__img-wrap anim">
+        <img class="about__img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Cedric A. Rolle at work">
+        <div class="about__img-accent"></div>
+      </div>
+      <div class="about__text">
+        <div class="section-label">About Cedric A. Rolle</div>
+        <h2 class="section-heading anim">Charting a Course Through Complex Maritime Law</h2>
+        <p class="anim anim-d1">
+          Called to the Bahamas Bar in 2004, Cedric A. Rolle has built a distinguished practice focused exclusively on maritime and admiralty law. From the historic chambers on Bay Street in Nassau, he advises vessel owners, commercial shipping lines, marine insurers, port operators, and individual seafarers on the full spectrum of maritime legal matters.
+        </p>
+        <p class="anim anim-d2">
+          After earning his LL.B. from the University of the West Indies and completing advanced maritime law studies at the University of London (IMO International Maritime Law Institute), Cedric returned to Nassau with a clear mission: to provide Bahamian and international clients with world-class maritime legal counsel rooted in deep local knowledge.
+        </p>
+        <div class="about__highlights anim anim-d3">
+          <div class="about__highlight">
+            <div class="about__highlight-icon">
+              <svg fill="none" stroke="#0B1628" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <h4>Bahamas Maritime Authority</h4>
+              <p>Registered legal adviser to the BMA</p>
+            </div>
+          </div>
+          <div class="about__highlight">
+            <div class="about__highlight-icon">
+              <svg fill="none" stroke="#0B1628" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            </div>
+            <div>
+              <h4>International Reach</h4>
+              <p>Representing clients across six jurisdictions</p>
+            </div>
+          </div>
+          <div class="about__highlight">
+            <div class="about__highlight-icon">
+              <svg fill="none" stroke="#0B1628" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <div>
+              <h4>Bahamas Bar Association</h4>
+              <p>Active member, Maritime Law Committee</p>
+            </div>
+          </div>
+          <div class="about__highlight">
+            <div class="about__highlight-icon">
+              <svg fill="none" stroke="#0B1628" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+              <h4>Proven Track Record</h4>
+              <p>Over 1,200 maritime cases resolved</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Practice Areas ───────────────────────────── -->
+<section class="practice" id="practice-areas">
+  <div class="container">
+    <div class="practice__header">
+      <div class="section-label">Areas of Expertise</div>
+      <h2 class="section-heading section-heading--light anim">Maritime &amp; Admiralty Practice Areas</h2>
+      <p class="section-subtext anim anim-d1">Comprehensive legal counsel for every aspect of maritime commerce, vessel operations, and marine disputes under Bahamian and international law.</p>
+    </div>
+    <div class="practice__grid">
+
+      <div class="practice__card anim">
+        <div class="practice__card-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+        </div>
+        <h3>Vessel Registration &amp; Flagging</h3>
+        <p>Ship registration under the Bahamas flag, one of the world's largest and most respected open registries. Compliance with Bahamas Maritime Authority regulations and international conventions.</p>
+        <a href="#contact" class="practice__card-link">Discuss Your Case <span>&rarr;</span></a>
+      </div>
+
+      <div class="practice__card anim anim-d1">
+        <div class="practice__card-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Marine Insurance &amp; Claims</h3>
+        <p>Advising underwriters, P&amp;I clubs, and vessel owners on hull and machinery claims, cargo damage disputes, and marine insurance coverage litigation under Bahamian and London market policies.</p>
+        <a href="#contact" class="practice__card-link">Discuss Your Case <span>&rarr;</span></a>
+      </div>
+
+      <div class="practice__card anim anim-d2">
+        <div class="practice__card-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <h3>Shipping &amp; Trade Disputes</h3>
+        <p>Resolving charter party disputes, bills of lading controversies, freight claims, and international trade conflicts. Representation before Bahamian courts and international arbitration tribunals.</p>
+        <a href="#contact" class="practice__card-link">Discuss Your Case <span>&rarr;</span></a>
+      </div>
+
+      <div class="practice__card anim anim-d3">
+        <div class="practice__card-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3>Salvage &amp; Wreck Removal</h3>
+        <p>Legal counsel on salvage rights, wreck removal obligations, and environmental liability under the Nairobi Convention and Bahamian environmental statutes. Protecting interests of both salvers and vessel owners.</p>
+        <a href="#contact" class="practice__card-link">Discuss Your Case <span>&rarr;</span></a>
+      </div>
+
+      <div class="practice__card anim anim-d4">
+        <div class="practice__card-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Seafarer Rights &amp; Crew Claims</h3>
+        <p>Representing crew members in personal injury claims, unpaid wage disputes, and wrongful termination cases under the Maritime Labour Convention. Advocating for fair treatment of maritime workers.</p>
+        <a href="#contact" class="practice__card-link">Discuss Your Case <span>&rarr;</span></a>
+      </div>
+
+      <div class="practice__card anim anim-d5">
+        <div class="practice__card-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <h3>Port &amp; Marina Operations</h3>
+        <p>Advising port authorities, marina operators, and dock facility owners on regulatory compliance, liability management, security requirements, and commercial lease agreements across the Bahamian archipelago.</p>
+        <a href="#contact" class="practice__card-link">Discuss Your Case <span>&rarr;</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Credentials ──────────────────────────────── -->
+<section class="credentials" id="credentials">
+  <div class="container">
+    <div class="credentials__header">
+      <div class="section-label">Qualifications &amp; Affiliations</div>
+      <h2 class="section-heading anim">Professional Credentials</h2>
+    </div>
+    <div class="credentials__grid">
+      <div class="credentials__item anim">
+        <div class="credentials__item-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5"/></svg>
+        </div>
+        <h4>LL.B., University of the West Indies</h4>
+        <p>Cave Hill Campus, Barbados</p>
+      </div>
+      <div class="credentials__item anim anim-d1">
+        <div class="credentials__item-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <h4>IMO Maritime Law Institute</h4>
+        <p>Advanced Diploma, University of London</p>
+      </div>
+      <div class="credentials__item anim anim-d2">
+        <div class="credentials__item-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>Bahamas Bar Association</h4>
+        <p>Licensed since 2004</p>
+      </div>
+      <div class="credentials__item anim anim-d3">
+        <div class="credentials__item-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+        </div>
+        <h4>Comit&eacute; Maritime International</h4>
+        <p>Member, Bahamas Chapter</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Testimonials ─────────────────────────────── -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="testimonials__header">
+      <div class="section-label">Client Testimonials</div>
+      <h2 class="section-heading anim">Trusted by Maritime Professionals</h2>
+    </div>
+    <div class="testimonials__grid">
+      <div class="testimonial__card anim">
+        <div class="testimonial__stars">&starf;&starf;&starf;&starf;&starf;</div>
+        <p class="testimonial__quote">"Cedric's expertise in Bahamian vessel registration saved us months of delays and significant costs when flagging our fleet. His command of the Merchant Shipping Act and BMA requirements is unmatched."</p>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">RH</div>
+          <div>
+            <div class="testimonial__name">Richard Haines</div>
+            <div class="testimonial__role">Managing Director, Caribbean Shipping Lines</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial__card anim anim-d1">
+        <div class="testimonial__stars">&starf;&starf;&starf;&starf;&starf;</div>
+        <p class="testimonial__quote">"When a cargo dispute threatened to ground our operations in Freeport, Mr. Rolle secured a resolution within weeks that preserved our commercial relationships and protected our interests completely."</p>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">AM</div>
+          <div>
+            <div class="testimonial__name">Angela Martinez</div>
+            <div class="testimonial__role">VP Operations, Nassau Freight Solutions</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial__card anim anim-d2">
+        <div class="testimonial__stars">&starf;&starf;&starf;&starf;&starf;</div>
+        <p class="testimonial__quote">"After a serious injury aboard a charter vessel, Cedric fought tirelessly for the compensation I was entitled to. He explained every step of the process and treated me with genuine respect throughout."</p>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">DP</div>
+          <div>
+            <div class="testimonial__name">Desmond Pinder</div>
+            <div class="testimonial__role">Seafarer, Nassau</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial__card anim anim-d3">
+        <div class="testimonial__stars">&starf;&starf;&starf;&starf;&starf;</div>
+        <p class="testimonial__quote">"We rely on Cedric for all marine insurance advisory across our Caribbean portfolio. His deep understanding of both P&amp;I club requirements and local Bahamian law makes him indispensable to our operations."</p>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">JW</div>
+          <div>
+            <div class="testimonial__name">Jonathan Webb</div>
+            <div class="testimonial__role">Senior Underwriter, Atlantic Marine Insurance</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA Banner ───────────────────────────────── -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-banner__inner anim">
+      <h2>Ready to Navigate Your Maritime Legal Matter?</h2>
+      <p>Contact Cedric A. Rolle today for a confidential consultation. Whether you face a complex dispute or need preventive legal guidance, experienced counsel is one call away.</p>
+      <div class="cta-banner__btns">
+        <a href="#contact" class="btn btn--gold">Schedule Consultation</a>
+        <a href="tel:+12423228800" class="btn btn--outline">Call (242) 322-8800</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ──────────────────────────────────── -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact__grid">
+      <div class="contact__info">
+        <div class="section-label">Get in Touch</div>
+        <h2 class="section-heading anim">Request a Consultation</h2>
+        <p class="anim anim-d1">Whether you are navigating a vessel registration, managing a maritime dispute, or seeking advisory counsel, reach out for a confidential consultation. Initial inquiries are welcome by phone or the form provided.</p>
+        
+        <div class="contact__detail anim anim-d2">
+          <div class="contact__detail-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h4>Office Address</h4>
+            <p>Rolle Maritime Chambers<br>No. 14 Bay Street, Second Floor<br>P.O. Box N-4820<br>Nassau, New Providence, The Bahamas</p>
+          </div>
+        </div>
+        <div class="contact__detail anim anim-d3">
+          <div class="contact__detail-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <h4>Telephone</h4>
+            <p><a href="tel:+12423228800">+1 (242) 322-8800</a></p>
+          </div>
+        </div>
+        <div class="contact__detail anim anim-d4">
+          <div class="contact__detail-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:cedric@rollemaritime.bs">cedric@rollemaritime.bs</a></p>
+          </div>
+        </div>
+        <div class="contact__detail anim anim-d5">
+          <div class="contact__detail-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h4>Office Hours</h4>
+            <p>Monday to Friday: 9:00 AM to 5:00 PM<br>Saturday: By appointment only</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact__form-card anim anim-d1">
+        <h3>Send an Inquiry</h3>
+        <p>Complete the form below and we will respond within one business day.</p>
+        <div>
+          <div class="form-grid">
+            <div class="form-row">
+              <label for="fname">Full Name *</label>
+              <input type="text" id="fname" placeholder="Your full name" required>
+            </div>
+            <div class="form-row">
+              <label for="femail">Email Address *</label>
+              <input type="email" id="femail" placeholder="you@example.com" required>
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="form-row">
+              <label for="fphone">Phone Number</label>
+              <input type="tel" id="fphone" placeholder="+1 (242) 000-0000">
+            </div>
+            <div class="form-row">
+              <label for="farea">Area of Interest</label>
+              <select id="farea">
+                <option value="">Select a practice area</option>
+                <option>Vessel Registration &amp; Flagging</option>
+                <option>Marine Insurance &amp; Claims</option>
+                <option>Shipping &amp; Trade Disputes</option>
+                <option>Salvage &amp; Wreck Removal</option>
+                <option>Seafarer Rights &amp; Crew Claims</option>
+                <option>Port &amp; Marina Operations</option>
+                <option>Other Maritime Matter</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="fmsg">Tell Us About Your Matter *</label>
+            <textarea id="fmsg" placeholder="Briefly describe your legal matter or question..." required></textarea>
+          </div>
+          <button class="form-submit" type="button" onclick="this.textContent='Thank You. We Will Be in Touch.'; this.disabled=true; this.style.opacity='0.7';">Submit Inquiry</button>
+          <p class="form-note">Your information is kept strictly confidential.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ───────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="#" class="nav__logo">
+          <div class="nav__logo-mark">CR</div>
+          <div class="nav__logo-text">
+            Cedric A. Rolle
+            <span>Maritime &amp; Admiralty Law</span>
+          </div>
+        </a>
+        <p>Providing dedicated maritime legal counsel to vessel owners, commercial operators, and seafarers throughout The Bahamas and across international waters since 2004.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Practice Areas</h4>
+        <ul>
+          <li><a href="#practice-areas">Vessel Registration &amp; Flagging</a></li>
+          <li><a href="#practice-areas">Marine Insurance &amp; Claims</a></li>
+          <li><a href="#practice-areas">Shipping &amp; Trade Disputes</a></li>
+          <li><a href="#practice-areas">Salvage &amp; Wreck Removal</a></li>
+          <li><a href="#practice-areas">Seafarer Rights</a></li>
+          <li><a href="#practice-areas">Port &amp; Marina Operations</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#credentials">Credentials</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <p>Rolle Maritime Chambers<br>No. 14 Bay Street, Second Floor<br>Nassau, New Providence<br>The Bahamas</p>
+        <a href="tel:+12423228800">+1 (242) 322-8800</a>
+        <a href="mailto:cedric@rollemaritime.bs">cedric@rollemaritime.bs</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Cedric A. Rolle, Maritime &amp; Admiralty Law. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── Scripts ──────────────────────────────────── -->
+<script>
+// Mobile nav toggle
+const toggle = document.getElementById('navToggle');
+const links = document.getElementById('navLinks');
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('active');
+  links.classList.toggle('open');
+});
+// Close nav on link click
+links.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    toggle.classList.remove('active');
+    links.classList.remove('open');
+  });
+});
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
