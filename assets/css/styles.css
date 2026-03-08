@@ -319,6 +319,9 @@ h2 {
 .portfolio-thumb-1 { background: linear-gradient(135deg, #1a2332 0%, #2C3340 100%); }
 .portfolio-thumb-2 { background: linear-gradient(135deg, #1f1a0f 0%, #3d2e0e 100%); }
 .portfolio-thumb-3 { background: linear-gradient(135deg, #0d1f1a 0%, #0e3028 100%); }
+.portfolio-thumb-4 { background: linear-gradient(135deg, #2d1a0d 0%, #4a2e1a 100%); }
+.portfolio-thumb-5 { background: linear-gradient(135deg, #0d1f15 0%, #1a3d26 100%); }
+.portfolio-thumb-6 { background: linear-gradient(135deg, #050d1a 0%, #0d1e36 100%); }
 .thumb-label {
   text-align: center;
   color: rgba(255,255,255,0.3);
